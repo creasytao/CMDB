@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wercker.yml</title>
+
+    <script type="text/javascript" src="wercker-schema.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/async.js"></script>
+    <script type="text/javascript" src="JSV/lib/uri/uri.js"></script>
+    <script type="text/javascript" src="JSV/lib/uri/schemes/urn.js"></script>
+    <script type="text/javascript" src="JSV/lib/jsv.js"></script>
+    <script type="text/javascript" src="JSV/lib/json-schema-draft-03.js"></script>
+    <script type="text/javascript" src="js/js-yaml.js"></script>
+
+    <script>
+    function makeSummary (box, buildSteps) {
+      var result = "Your wercker.yml will use the box " + box.name + "<br/>" +
+        "Description: " + box.description + "<br/>" ;
+      _.each(buildSteps, function (buildStep) {
+        result += buildStep.name + ": " + buildStep.description + "<br/>"
+      })
+      $("#summary").html(result);
+      createPipeline(box,buildSteps);
+    }
+    function createPipeline (box, buildSteps) {
+      $("#box-name").html("");
+      $("#build-steps").html("");
+      _.each(buildSteps, function (buildStep) {
+        $("<span class=\"step\">").html(buildStep.name).appendTo("#build-steps");
+      })
+      $("#box-name").html(box.name);
+    }
+    function showError (message) {
+      $("#errors").html(message);
+    }
+    function getBox (fullname, callback) {
+      var boxName = fullname;
+      var boxVersion = "*"
+      if(boxName.split("@").length > 1){
+        boxName = fullname.split("@")[0]
+        boxVersion = fullname.split("@")[1]
+      }
+      $.getJSON("http://app.wercker.com/api/v2/boxes/" + boxName + "/" + boxVersion + "?callback=?",function  (data) {
+        callback(null, data);
+      }).fail(function  (error) {
+        if(error.status === 404){
+          callback(null, null);
+        }
+        else{
+          callback(error)
+        }
+      });
+    }
+    function getStep (fullname, callback) {
+      if(!_.isString(fullname)){
+        try{
+          fullname = Object.keys(fullname)[0];
+        }
+        catch(e){
+          console.log(e);
+          callback(e)
+        }
+      }
+        var stepName = fullname;
+      var stepVersion = "*"
+      if(stepName.split("@").length > 1){
+        stepName = fullname.split("@")[0]
+        stepVersion = fullname.split("@")[1]
+      }
+      if(stepName.indexOf("/") === -1){
+        stepName = "wercker/" + stepName;
+      }
+      $.getJSON("http://app.wercker.com/api/v2/steps/" + stepName + "/" + stepVersion + "?callback=?",function  (data) {
+        callback(null, data);
+      }).fail(function  (error) {
+        if(error.status === 404){
+          callback(null, null);
+        }
+        else{
+          callback(error)
+        }
+      });
+    }
+    $(function () {
+      $("#check-button").on("click", function () {
+        $("#errors").html("");
+        $("#summary").html("");
+        var yaml = $("#wercker-yml-input").val();
+        var doc = {};
+        try{
+          doc = jsyaml.load(yaml);
+        }
+        catch(error){
+          return $("#errors").html(error.message.replace("\n","</br>"));
+        }
+        var environmentId = "json-schema-draft-03";
+        var environment = JSV.createEnvironment(environmentId);
+      var report = environment.validate(doc, schema);
+      if(report.errors.length !== 0){
+        var errorMessage = "";
+        _.each(report.errors, function (error) {
+          console.log(error)
+          var elementName = error.schemaUri.replace("http://jsonschema.net", "").replace("#", "")
+          if(elementName === ""){
+            elementName = "root";
+          }
+          errorMessage += error.message + ": " + elementName + "\n";
+        });
+        errorMessage = errorMessage.replace("\n","</br>");
+        return $("#errors").html(errorMessage);
+      }
+      var boxName = doc.box;
+      var boxVersion = "*"
+      if(boxName.split("@").length > 1){
+        boxName = doc.box.split("@")[0]
+        boxVersion = doc.box.split("@")[1]
+      }
+      getBox(doc.box, function  (error, boxData) {
+        if(error){
+          return showError(JSON.stringify(error))
+        }
+        if(!boxData){
+          return showError("Box '" + doc.box + "' does not exist in de the registry.")
+        }
+        buildSteps = []
+        if(doc && doc.build && doc.build.steps ){
+          async.eachSeries(doc.build.steps, function (step, eachNext) {
+            if(!_.isString(step)){
+              try{
+                step = Object.keys(step)[0];
+              }
+              catch(e){
+                return eachNext(e);
+              }
+            }
+            if(step === "script"){
+              buildSteps.push({name : "script", description : "Runs your script defined in code element."})
+              return eachNext()
+            }
+            getStep(step, function  (error, stepData) {
+              if(error){
+                return eachNext(error);
+              }
+              if(!stepData){
+                return showError("Step '" + step + "' does not exist in the registry.");
+              }
+              buildSteps.push(stepData);
+              eachNext()
+            })
+          }, function (error) {
+                        makeSummary(boxData, buildSteps);
+          })
+        }
+        else{
+          makeSummary(boxData, [])
+        }
+      })
+      })
+    })
+    </script>
+<style>
+  #pipeline {
+    background-color:#ebeef3;
+    border-color: black;
+    border-style: solid;
+    padding: 10px;
+  }
+  .box {
+    border-color: black;
+    border-style: solid;
+    background-color: #d9e8e9;
+    margin: 5px;
+    padding: 10px;
+  }
+  .step {
+    background-color:#00ad73;
+    border-color: black;
+    border-style: solid;
+    margin: 3px;
+  }
+  .box-label {
+    font-style: italic;
+  }
+</style>
+
+  </head>
+  <body>
+    <textarea id="wercker-yml-input">box: wercker/default
+build:
+  steps:
+    - jshint
+    - script:
+        code: echo 1
+</textarea>
+    <button id="check-button">Check</button>
+    <h2>errors</h2>
+    <div id="errors"></div>
+    <h2>summary</h2>
+    <div id="summary"></div>
+    <h2>pipeline</h2>
+    <div id="pipeline">
+
+<span class="step">get code</span>
+<div class="box">
+  <div class="box-steps">
+    <span class="step">setup environment</span>
+    <span class="step">environment variables</span>
+
+  <span id="build-steps">
+
+  </span>
+  <span class="step">package</span>
+</div>
+  <span class="box-label" id="box-name">boxname</span>
+
+</div>
+    </div>
+  </body>
+</html>

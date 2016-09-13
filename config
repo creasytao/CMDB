@@ -1,0 +1,30 @@
+[base]
+debug = True
+template_debug = True
+allowed_hosts = []
+
+[session]
+session_expire_at_browser_close = True
+
+[db]
+host = 192.168.88.92
+username = django
+password = 123456
+database = django
+
+[mail]
+email_host = smtp.exmail.qq.com
+email_port = 25
+email_host_user = monitor@zhan.com
+email_host_password = 6yTUlNTf
+email_use_tls = False
+default_from_email = 运维CMDB系统 <monitor@zhan.com>
+
+[admin]
+header = 运维CMDB管理后台
+title = CMDB后台
+site_url = /publish
+
+[aliyun]
+keyid = KQVMzZVHTiSlj7f4
+keysecret = lhIT0ADM7nXj3U05D2DoZCcFJ0pjvm
