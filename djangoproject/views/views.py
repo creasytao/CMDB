@@ -2,7 +2,7 @@
 
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, User
 from django.contrib import auth
 from django.contrib import messages
 from django.template.context import RequestContext
@@ -12,6 +12,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from bootstrap_toolkit.widgets import BootstrapUneditableInput
 from django.contrib.auth.decorators import login_required
+from mywrapper import _auth
 
 from forms import LoginForm,ChangepwdForm
 
@@ -63,6 +64,7 @@ def login(request):
             )
 
 @login_required(login_url='/')
+#@_auth('项目发布申请')
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/')
@@ -106,7 +108,10 @@ def changepwd(request):
                 locals()
             )
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+
+#@_auth(group='publish', redirect='/publish')
+@_auth(group='publish')
 def dashboard(request):
     return render_to_response(
         'dashboard.html',
@@ -303,4 +308,3 @@ def EcsGet():
                 except Exception,e:
                     #logger.error(e)
                     print(e)
-
