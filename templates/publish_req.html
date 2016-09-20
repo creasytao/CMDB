@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+发布系统
+申请页
+
+{% endblock %}
+
+{% block page-content %}
+
+
+
+<br></br>
+<h1> 发布系统 --这里是项目发布申请页</h1>
+<br></br>
+<div class="input-group" >
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">project:&nbsp;</label>
+		<div class="col-sm-10">
+			<select id="projec" name='projectname' class="selectpicker" role="form">
+				{% for project in project_list %}
+				<option>{{ project.aliasname }}</option>
+				{% endfor %}
+			</select>
+		 </div>
+	</div>
+	<br>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Action:&nbsp;</label>
+		<div class="col-sm-10">
+			<select id="Action"  name='actionname' class="selectpicker" data-toggle="tooltip" role="form">
+				{% comment %}
+				{% for action in action_list %}
+				<option>{{ action.name }}</option>
+				{% endfor %}
+				{% endcomment %}}
+			</select>
+		 </div>
+	</div>
+	<br>
+	<div class="form-group">
+                <label class="col-sm-2 control-label">version No.:&nbsp;</label>
+                <div class="col-sm-10">
+                	<input class="w3-input" type="text" id="version" placeholder="回滚时须填版本号">
+                 </div>
+	</div>
+
+        <br>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">申请人:&nbsp;</label>
+		<div class="col-sm-10">
+			<select id="sponsor"  name='people1' class="form-control" data-toggle="tooltip" role="form">
+				<option>{{ request.user.username }}</option>
+			</select>
+		 </div>
+	</div>
+        <br>	
+        <div class="form-group">
+                 <label class="col-sm-2 control-label">发布说明:&nbsp;</label>
+                 <textarea id="detail" class="form-control" type="text" required cols="45" rows="5" placeholder="请务必认真填写"></textarea>
+        </div>
+
+	<br>
+        <div class="form-group">
+		 <label class="col-sm-2 control-label">&nbsp;</label>
+                 <div class="col-sm-10">
+			<button id="my-form" type="button" class="btn btn-primary">提交</button>
+                 </div>
+        </div>
+
+</form>
+</div>
+
+
+<div class="container">
+	<pre id="result" class="pre-scrollable"></pre>
+</div>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('#projec').ready(function(){
+	$( "#Action" ).empty();
+	$("#Action").val('');
+        var project = $("#projec").val();
+
+	$.ajax({
+		url: '/getaction/',
+		type:'post',
+		dataType:'json',
+		data: {'project': project },
+		success:function(ret)
+		{
+			console.log(ret)
+                        //for (x in ret) {
+                        //	$("<option>" + ret.action[x] + "</option>").appendTo($("#Action"));
+			//}
+			$.each(ret, function(key, value){
+                        	$("<option>" + value.fields.aliasname + "</option>").appendTo($("#Action"));
+			});
+		}
+	});
+      });
+    });
+    $(document).ready(function(){
+      $('#projec').change(function(){
+	$( "#Action" ).empty();
+	$("#Action").val('');
+        var project = $("#projec").val();
+
+	$.ajax({
+		url: '/getaction/',
+		type:'post',
+		dataType:'json',
+		data: {'project': project },
+		success:function(ret)
+		{
+			console.log(ret)
+                        //for (x in ret) {
+                        //	$("<option>" + ret.action[x] + "</option>").appendTo($("#Action"));
+			//}
+			$.each(ret, function(key, value){
+                        	$("<option>" + value.fields.aliasname + "</option>").appendTo($("#Action"));
+			});
+		}
+	});
+      });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+      $('#my-form').click(function(){
+        $( "#result" ).empty();
+        var project = $("#projec").val();
+        var action = $("#Action").val();
+        var version = $("#version").val();
+        var detail = $("#detail").val();
+        //console.log(project,action,sponsor,Operator,detail)
+      	alert("你非常确定你要这么干？？？");
+	if(project==null || action==null || detail.length==0 || sponsor==null){
+      		alert("二货，你妈叫你回家吃饭");
+      		return false;
+   	}
+        $.ajax({
+                url: '/saltcall/',
+                type:'post',
+                dataType:'json',
+                data: {'project': project, 'action': action, 'version': version, 'sponsor': sponsor, 'Operator': Operator, 'detail': detail },
+                success:function(ret)
+                {
+			console.log(ret)
+			$('#result').html(ret.msg);
+                }
+        });
+      });
+    });
+
+</script>
+
+{% endblock %}

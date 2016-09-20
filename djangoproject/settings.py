@@ -111,7 +111,7 @@ USE_TZ = False
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = config.getboolean('session','session_expire_at_browser_close')
 #SESSION_COOKIE_AGE = config.get('session','session_cookie_age')
-SESSION_COOKIE_AGE = 30 * 60
+#SESSION_COOKIE_AGE = 30 * 60
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

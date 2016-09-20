@@ -59,7 +59,7 @@ class HostAdmin(admin.ModelAdmin):
         'ssh_port',
         'os')
     #多对多字段复选框 水平排列
-    filter_horizontal = ('group','service',)
+    filter_horizontal = ('hostgroup','service',)
     #外键字段 文本框展示
     raw_id_fields = ('idc',)
 
@@ -127,15 +127,15 @@ class PAuditAdmin(ReadOnlyModelAdmin):
     date_hierarchy = 'time'
     ordering = ('-time',)
 
-class RequestAdmin(admin.ModelAdmin):
-    list_per_page = 30
-    list_display = ('requester_name',)
-    search_fields = ('requester_name',)
-    list_filter = (
-        'requester_name',
-        'project')
+#class RequestAdmin(admin.ModelAdmin):
+#    list_per_page = 30
+#    list_display = ('requester_name',)
+#    search_fields = ('requester_name',)
+#    list_filter = (
+#        'requester_name',
+#        'project')
     #多对多字段复选框 垂直排列
-    filter_vertical = ('project',)
+#    filter_vertical = ('project',)
 
 class ActionAdmin(admin.ModelAdmin):
     list_per_page = 30
@@ -155,12 +155,12 @@ class ActionAdmin(admin.ModelAdmin):
         'action_name')
 
 admin.site.register(Idc,IdcAdmin)
-admin.site.register(Group)
+admin.site.register(HostGroup)
 admin.site.register(Service,ServiceAdmin)
 admin.site.register(Host,HostAdmin)
 admin.site.register(Project,ProjectAdmin)
 admin.site.register(Action,ActionAdmin)
-admin.site.register(Requester,RequestAdmin)
+#admin.site.register(Requester,RequestAdmin)
 admin.site.register(PAudit,PAuditAdmin)
 
 #管理django_admin_log

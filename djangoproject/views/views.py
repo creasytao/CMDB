@@ -6,6 +6,7 @@ from django.contrib.auth.models import Group, User
 from django.contrib import auth
 from django.contrib import messages
 from django.template.context import RequestContext
+from django.core import serializers
 
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -63,13 +64,14 @@ def login(request):
                 locals()
             )
 
-@login_required(login_url='/')
-#@_auth('项目发布申请')
+#@login_required(login_url='/')
+@_auth()
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/')
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def changepwd(request):
     redirect_to=request.GET['next']
     if request.method == 'GET':
@@ -109,20 +111,20 @@ def changepwd(request):
             )
 
 #@login_required(login_url='/')
-
-#@_auth(group='publish', redirect='/publish')
-@_auth(group='publish')
+@_auth()
 def dashboard(request):
     return render_to_response(
         'dashboard.html',
         locals()
     )
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def assets(request):
     return HttpResponseRedirect('/assets/hostlist')
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def assets_hostlist(request):
     lines=Host.objects.all().order_by("-id")
     paginator = Paginator(lines, 10)
@@ -140,21 +142,24 @@ def assets_hostlist(request):
         locals()
     )
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def assets_topology(request):
     return render_to_response(
         'topology.html',
         locals()
     )
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def configure(request):
     return render_to_response(
         'configure.html',
         locals()
     )
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def audit(request):
     return render_to_response(
         'audit.html',
@@ -162,42 +167,60 @@ def audit(request):
     )
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth(group='publish', viewfunc='views.publish_req')
+@_auth(group='admin')
 def publish(request):
+    '''
+    项目发布执行页
+    '''
     project_list=Project.objects.all()
     action_list=Action.objects.all()
-    requester_list=Requester.objects.all()
+    #requester_list=Requester.objects.all()
     return render_to_response(
         'publish.html',
         locals()
     )
 
-@login_required(login_url='/')
+@_auth(group='publish')
+def publish_req(request):
+    '''
+    项目发布申请页
+    '''
+    #多对多反查，已知用户查项目
+    project_list=User.objects.get(
+        username=request.user.username
+    ).project_set.all()
+
+    return render_to_response(
+        'publish_req.html',
+        locals()
+    )
+
+#@login_required(login_url='/')
+@_auth()
 def getaction(request):
     try:
-        action=[]
-        requester=[]
-        projectname=request.POST['project']
-        a=Project.objects.get(project_name=projectname)
-        # 多对多正查
-        for i in a.action.all():
-            action.append(i.action_name)
-        # 多对多反查
-        for i in a.requester_set.all():
-            requester.append(i.requester_name)
+        format = 'json'
+        mimetype = 'application/json'
 
-        print action,requester
-        data={
-            'action':action,
-            'sponsor':requester
-        }
-        return JsonResponse(data)
+        # 多对多正查
+        action=Project.objects.get(
+            aliasname=request.POST['project']
+        ).action.all()
+
+        data = serializers.serialize(format, action)
+
+        #return JsonResponse(data)
+        return HttpResponse(data, mimetype)
+
     except Exception,e:
         #print(e)
         logger.error(e)
 
 
-@login_required(login_url='/')
+#@login_required(login_url='/')
+@_auth()
 def saltcall(request):
     try:
         project=request.POST.get('project','')

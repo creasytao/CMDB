@@ -312,3 +312,52 @@
 2016-09-09 18:09:05,537 [Thread-2:139655519848192] [sourceDns.webdns.views:240] [views:saltcall] [ERROR]- (1290, 'The MySQL server is running with the --read-only option so it cannot execute this statement')
 2016-09-09 18:10:17,193 [Thread-2:140133441468160] [sourceDns.webdns.views:240] [views:saltcall] [ERROR]- (1290, 'The MySQL server is running with the --read-only option so it cannot execute this statement')
 2016-09-09 18:11:24,496 [Thread-3:140133441468160] [sourceDns.webdns.views:240] [views:saltcall] [ERROR]- (1290, 'The MySQL server is running with the --read-only option so it cannot execute this statement')
+2016-09-20 14:37:20,701 [Thread-7:140528444241664] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 14:41:33,172 [Thread-12:139689914640128] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 14:41:39,295 [Thread-15:139689914640128] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:02:48,790 [Thread-69:139971027527424] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:05:51,954 [Thread-70:139971027527424] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:05:53,502 [Thread-71:139971027527424] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:13:41,487 [Thread-86:139971027527424] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:13:46,791 [Thread-90:139971027527424] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:14:23,287 [Thread-11:139822356604672] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:15:12,674 [Thread-20:139822356604672] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:18:06,172 [Thread-6:140119043065600] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:18:07,686 [Thread-8:140119043065600] [sourceDns.webdns.views:219] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:21:02,454 [Thread-6:139965937743616] [sourceDns.webdns.views:220] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:26:18,370 [Thread-6:140414245091072] [sourceDns.webdns.views:220] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:27:18,219 [Thread-6:140485730027264] [sourceDns.webdns.views:221] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:37:10,490 [Thread-6:140545031440128] [sourceDns.webdns.views:223] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:37:39,834 [Thread-6:140234641635072] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:43:20,637 [Thread-11:140234855610112] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:44:08,918 [Thread-6:140726874662656] [sourceDns.webdns.views:225] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:45:07,379 [Thread-6:140009424287488] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:47:42,778 [Thread-11:140009558505216] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:48:31,507 [Thread-20:140009558505216] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:48:42,527 [Thread-25:140009558505216] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:49:13,491 [Thread-30:140009558505216] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:50:39,466 [Thread-6:140243759933184] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 15:50:51,506 [Thread-6:139720475076352] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:50:53,576 [Thread-11:139720475076352] [sourceDns.webdns.views:226] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:53:35,616 [Thread-6:140130609161984] [sourceDns.webdns.views:227] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:54:18,828 [Thread-11:140130609161984] [sourceDns.webdns.views:227] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:56:32,254 [Thread-242:140130572437248] [sourceDns.webdns.views:227] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:59:08,316 [Thread-22:140105505724160] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:59:39,818 [Thread-119:140105484744448] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 15:59:53,968 [Thread-135:140105484744448] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 16:00:09,550 [Thread-152:140105484744448] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 16:02:46,334 [Thread-6:140214413170432] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 16:05:50,242 [Thread-6:140010688866048] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 16:05:59,135 [Thread-6:140291818387200] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- 'Project' object has no attribute 'requester_set'
+2016-09-20 16:16:10,792 [Thread-6:140633195050752] [sourceDns.webdns.views:221] [views:getaction] [ERROR]- {'action': [<Action: 发布>, <Action: 上线>, <Action: 回滚>], 'request': <WSGIRequest: POST '/getaction/'>}
+2016-09-20 16:35:57,059 [Thread-6:139988911666944] [sourceDns.webdns.views:221] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:36:00,193 [Thread-11:139988911666944] [sourceDns.webdns.views:221] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:36:18,319 [Thread-6:140357140444928] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:36:29,600 [Thread-11:140357140444928] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:36:42,125 [Thread-6:140327372445440] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:37:57,253 [Thread-11:140327372445440] [sourceDns.webdns.views:222] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:39:28,522 [Thread-6:140384820782848] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- global name 'a' is not defined
+2016-09-20 16:42:56,555 [Thread-11:140257928410880] [sourceDns.webdns.views:224] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 16:48:46,831 [Thread-6:139843598284544] [sourceDns.webdns.views:223] [views:getaction] [ERROR]- Project matching query does not exist.
+2016-09-20 17:14:34,579 [Thread-49:139634352846592] [sourceDns.webdns.views:223] [views:getaction] [ERROR]- "'project'"
+2016-09-20 17:16:09,279 [Thread-50:139634352846592] [sourceDns.webdns.views:223] [views:getaction] [ERROR]- "'project'"

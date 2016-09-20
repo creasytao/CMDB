@@ -4,7 +4,7 @@ from __future__ import unicode_literals, absolute_import
 import cPickle as pickle
 
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 
 class Idc(models.Model):
     '''
@@ -25,7 +25,7 @@ class Idc(models.Model):
     def __unicode__(self):
         return self.idc_name
 
-class Group(models.Model):
+class HostGroup(models.Model):
     group_name = models.CharField(
         max_length=50,
         unique=True)
@@ -76,8 +76,8 @@ class Host(models.Model):
         unique=True,
         verbose_name='公有ip地址')
     idc = models.ForeignKey(Idc)
-    group = models.ManyToManyField(
-        Group,
+    hostgroup = models.ManyToManyField(
+        HostGroup,
         blank=True)
     service = models.ManyToManyField(
         Service,
@@ -130,6 +130,10 @@ class Project(models.Model):
     action = models.ManyToManyField(
         Action,
         blank=True)
+    requester = models.ManyToManyField(
+        User,
+        blank=True,
+        verbose_name='项目申请人')
 
     def __unicode__(self):
         return self.aliasname
@@ -138,21 +142,6 @@ class Project(models.Model):
         if not self.project_name:self.project_name = None
         if not self.aliasname:self.aliasname = None
         super(Project, self).save(*args, **kwargs)
-
-class Requester(models.Model):
-    '''
-    项目发布申请人
-    '''
-    requester_name = models.CharField(
-        max_length=25,
-        unique=True,
-        verbose_name='申请人')
-    project = models.ManyToManyField(
-        Project,
-        blank=True,
-        verbose_name='申请项目')
-    def __unicode__(self):
-        return self.requester_name
 
 class PAudit(models.Model):
     '''
@@ -174,7 +163,7 @@ class PAudit(models.Model):
         on_delete=models.SET_NULL
     )
     requester = models.ForeignKey(
-        Requester,
+        User,
         related_name='pa_s',
         null=True,
         blank=True,

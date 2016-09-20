@@ -6501,3 +6501,830 @@ Traceback (most recent call last):
   File "/root/djangoproject/djangoproject/views/mywrapper.py", line 42, in _login
     print kwargs['group']
 KeyError: 'group'
+2016-09-19 09:52:48,567 [Thread-5:140106732140288] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 31, in _login
+    if (group in usergroup) and redirect:return HttpResponseRedirect(redirect)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:53:59,199 [Thread-2:140613202736896] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 34, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:54:03,662 [Thread-3:140613202736896] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 34, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:55:06,888 [Thread-2:139888458983168] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 34, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:55:39,061 [Thread-2:139686686045952] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 35, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:56:10,534 [Thread-2:140131511588608] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 35, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:56:16,559 [Thread-4:140131511588608] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 35, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 09:56:38,455 [Thread-7:140131511588608] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 35, in _login
+    if group in usergroup:return func(request, *args, **kwargs)
+TypeError: argument of type 'NoneType' is not iterable
+2016-09-19 11:12:41,447 [Thread-10:140415850186496] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:14:05,584 [Thread-11:140415850186496] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:14:12,288 [Thread-2:140154491922176] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:15:11,849 [Thread-12:139994290890496] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:16:23,703 [Thread-13:140587757987584] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:17:10,264 [Thread-2:139869300979456] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /assets/hostlist/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.assets_hostlist didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:19:16,290 [Thread-6:140289319614208] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:20:55,485 [Thread-2:139978853480192] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:21:20,386 [Thread-2:140159360993024] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:21:22,466 [Thread-3:140159360993024] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:21:27,678 [Thread-4:140159360993024] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:21:33,050 [Thread-2:139801078630144] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:21:34,865 [Thread-3:139801078630144] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:23:01,496 [Thread-13:139801078630144] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.dashboard didn't return an HttpResponse object. It returned None instead.
+2016-09-19 11:31:48,037 [Thread-13:139898490185472] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /assets/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 16, in __auth
+    @wraps(func)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/functools.py", line 33, in update_wrapper
+    setattr(wrapper, attr, getattr(wrapped, attr))
+AttributeError: 'WSGIRequest' object has no attribute '__name__'
+2016-09-19 13:07:45,347 [Thread-5:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:35,077 [Thread-6:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:36,674 [Thread-7:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:38,691 [Thread-8:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:41,290 [Thread-9:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:42,125 [Thread-10:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:43,604 [Thread-11:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:44,412 [Thread-12:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:44,832 [Thread-13:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:08:45,333 [Thread-14:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    CheckFunc(request, group, usergroup, redirect, viewfunc, func)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    return func(request, *args, **kwargs)
+NameError: global name 'request' is not defined
+2016-09-19 13:11:00,470 [Thread-15:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    if (group in usergroup) and not redirect and not viewfunc:
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+    #        return __auth(func)
+NameError: global name 'request' is not defined
+2016-09-19 13:18:10,608 [Thread-16:140258614953728] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 60, in _login
+    #    def foo(func):
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 77, in CheckFunc
+NameError: global name 'request' is not defined
+2016-09-19 13:25:38,114 [Thread-2:139745015363328] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 47, in _login
+    logger.default("检查组权限")
+AttributeError: 'Logger' object has no attribute 'default'
+2016-09-19 13:44:14,787 [Thread-5:140460573267712] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logger.debug("只检查登录,登录用户是%s" % username)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 13:45:22,013 [Thread-2:140305844139776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logmsg="只检查登录,登录用户是%s" % username
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 13:45:25,855 [Thread-3:140305844139776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logmsg="只检查登录,登录用户是%s" % username
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 13:45:34,509 [Thread-2:140093059524352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logmsg="只检查登录,登录用户是%s" % username
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 13:47:22,072 [Thread-2:140085762918144] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logger.debug("只检查登录,登录用户是%s" % username)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 13:47:22,917 [Thread-3:140085762918144] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logger.debug("只检查登录,登录用户是%s" % username)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe5 in position 0: ordinal not in range(128)
+2016-09-19 14:15:38,135 [Thread-2:140214039213824] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 41, in _login
+    logger.WARNING("没有登录")
+AttributeError: 'Logger' object has no attribute 'WARNING'
+2016-09-19 14:22:15,301 [Thread-4:139958083852032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 61, in _login
+    return views.viewfunc(request, *args, **kwargs)
+AttributeError: 'module' object has no attribute 'viewfunc'
+2016-09-19 14:23:53,565 [Thread-6:140505327834880] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 61, in _login
+    return views.viewfunc(request, *args, **kwargs)
+AttributeError: 'module' object has no attribute 'viewfunc'
+2016-09-19 14:25:58,736 [Thread-2:140471835723520] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return views.viewfunc(request, *args, **kwargs)
+AttributeError: 'module' object has no attribute 'viewfunc'
+2016-09-19 14:55:58,936 [Thread-5:140084955064064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/middleware/clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'str' object has no attribute 'get'
+2016-09-19 14:56:50,856 [Thread-2:140425532126976] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 14:57:17,545 [Thread-3:140425532126976] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 14:57:20,936 [Thread-4:140425532126976] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 14:57:23,099 [Thread-5:140425532126976] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 15:03:19,016 [Thread-7:140042296661760] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/middleware/clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'str' object has no attribute 'get'
+2016-09-19 15:03:52,769 [Thread-2:139684367574784] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 15:04:36,529 [Thread-2:139876872746752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 15:05:29,057 [Thread-2:140492404627200] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 64, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 15:06:51,742 [Thread-3:140710709761792] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return viewfunc(request, *args, **kwargs)
+TypeError: 'str' object is not callable
+2016-09-19 15:07:28,052 [Thread-2:140158271747840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/middleware/clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'str' object has no attribute 'get'
+2016-09-19 15:32:18,325 [Thread-12:139965306550016] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return views.login(request, *args, **kwargs)
+NameError: global name 'views' is not defined
+2016-09-19 15:32:41,835 [Thread-2:140279371679488] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return views.login(request, *args, **kwargs)
+NameError: global name 'views' is not defined
+2016-09-19 15:33:29,380 [Thread-2:140620166010624] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return login(request, *args, **kwargs)
+NameError: global name 'login' is not defined
+2016-09-19 15:33:30,988 [Thread-3:140620166010624] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return login(request, *args, **kwargs)
+NameError: global name 'login' is not defined
+2016-09-19 15:33:36,330 [Thread-2:139747785770752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return login(request, *args, **kwargs)
+NameError: global name 'login' is not defined
+2016-09-19 15:34:01,024 [Thread-3:139747785770752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return views.login(request, *args, **kwargs)
+NameError: global name 'login' is not defined
+2016-09-19 15:34:02,607 [Thread-4:139747785770752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 43, in _login
+    return views.login(request, *args, **kwargs)
+NameError: global name 'login' is not defined
+2016-09-19 15:39:02,378 [Thread-2:140299042957056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    import foo
+ImportError: No module named foo
+2016-09-19 15:41:15,432 [Thread-2:139973829973760] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    import foo
+ImportError: No module named foo
+2016-09-19 15:41:16,819 [Thread-3:139973829973760] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    import foo
+ImportError: No module named foo
+2016-09-19 15:41:43,918 [Thread-2:140065586788096] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return getattr('viewfunc')()
+TypeError: getattr expected at least 2 arguments, got 1
+2016-09-19 15:42:13,070 [Thread-2:139878938109696] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 62, in _login
+    return eval('viewfunc')()
+TypeError: 'str' object is not callable
+2016-09-19 16:50:01,677 [Thread-2:139812502787840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: unbound method publish() must be called with Publish instance as first argument (got WSGIRequest instance instead)
+2016-09-19 18:20:26,481 [Thread-3:139812502787840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: unbound method publish() must be called with Publish instance as first argument (got WSGIRequest instance instead)
+2016-09-19 18:20:27,597 [Thread-4:139812502787840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: unbound method publish() must be called with Publish instance as first argument (got WSGIRequest instance instead)
+2016-09-20 13:38:17,034 [Thread-2:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:46:19,422 [Thread-3:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:46:35,538 [Thread-4:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:46:35,542 [Thread-4:139905336284928] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 87, in get_exception_response
+    response = callback(request, **param_dict)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/views/defaults.py", line 81, in permission_denied
+    return http.HttpResponseForbidden(template.render(request=request))
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/backends/django.py", line 74, in render
+    return self.template.render(context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/base.py", line 209, in render
+    return self._render(context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/base.py", line 201, in _render
+    return self.nodelist.render(context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/base.py", line 903, in render
+    bit = self.render_node(node, context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/debug.py", line 79, in render_node
+    return node.render(context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/loader_tags.py", line 113, in render
+    compiled_parent = self.get_parent(context)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/loader_tags.py", line 110, in get_parent
+    return context.template.engine.get_template(parent)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/template/engine.py", line 146, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: ../base.html
+2016-09-20 13:46:55,515 [Thread-5:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:46:57,849 [Thread-9:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:00,147 [Thread-11:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:24,862 [Thread-12:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:38,798 [Thread-16:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:42,437 [Thread-20:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:51,426 [Thread-31:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:55,078 [Thread-32:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:47:57,253 [Thread-34:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:48:00,963 [Thread-37:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:48:15,104 [Thread-39:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:49:18,770 [Thread-44:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:49:46,621 [Thread-46:139905336284928] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 13:51:11,187 [Thread-103:139905299560192] [django.request:170] [base:get_response] [WARNING]- Not Found: /api/v1/
+2016-09-20 13:51:22,030 [Thread-104:139905299560192] [django.request:170] [base:get_response] [WARNING]- Not Found: /api/v1/snippets/
+2016-09-20 14:30:50,484 [Thread-7:140296334530304] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 14:35:47,097 [Thread-85:140296334530304] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 14:36:10,610 [Thread-99:140296334530304] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 73, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 55, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 178, in publish
+    requester_list=Requester.objects.all()
+NameError: global name 'Requester' is not defined
+2016-09-20 14:37:20,702 [Thread-7:140528444241664] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 14:41:33,172 [Thread-12:139689914640128] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 14:41:39,295 [Thread-15:139689914640128] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:02:48,791 [Thread-69:139971027527424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:05:51,955 [Thread-70:139971027527424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:05:53,511 [Thread-71:139971027527424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:13:41,487 [Thread-86:139971027527424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:13:46,791 [Thread-90:139971027527424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:14:23,287 [Thread-11:139822356604672] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:15:12,674 [Thread-20:139822356604672] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:18:06,173 [Thread-6:140119043065600] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:18:07,687 [Thread-8:140119043065600] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:21:02,454 [Thread-6:139965937743616] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:26:18,371 [Thread-6:140414245091072] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:27:18,219 [Thread-6:140485730027264] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:36:46,737 [Thread-2:140466496603904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return eval(viewfunc)(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 55, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 190, in publish_req
+    for i in a.book_set.all():
+AttributeError: 'User' object has no attribute 'book_set'
+2016-09-20 15:37:10,490 [Thread-6:140545031440128] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:37:39,835 [Thread-6:140234641635072] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:43:20,637 [Thread-11:140234855610112] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:44:08,919 [Thread-6:140726874662656] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:45:07,379 [Thread-6:140009424287488] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:47:42,779 [Thread-11:140009558505216] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:48:31,508 [Thread-20:140009558505216] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:48:42,528 [Thread-25:140009558505216] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:49:13,492 [Thread-30:140009558505216] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:50:16,417 [Thread-2:140569499657984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return eval(viewfunc)(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 55, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 197, in publish_req
+    print project_list,action_list
+NameError: global name 'action_list' is not defined
+2016-09-20 15:50:39,467 [Thread-6:140243759933184] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:50:51,507 [Thread-6:139720475076352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:50:53,576 [Thread-11:139720475076352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:53:35,617 [Thread-6:140130609161984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:54:18,829 [Thread-11:140130609161984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:54:34,632 [Thread-23:140130609161984] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:56:00,176 [Thread-143:140130209752832] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:56:32,254 [Thread-242:140130572437248] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:56:47,845 [Thread-255:140130572437248] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:56:53,435 [Thread-265:140130609161984] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:56:58,460 [Thread-270:140130220242688] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:56:59,097 [Thread-275:140130220242688] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:58:53,857 [Thread-3:140105521469184] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 15:59:08,317 [Thread-22:140105505724160] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:59:39,819 [Thread-119:140105484744448] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 15:59:53,969 [Thread-135:140105484744448] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:00:09,551 [Thread-152:140105484744448] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:02:46,334 [Thread-6:140214413170432] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:05:50,242 [Thread-6:140010688866048] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:05:59,136 [Thread-6:140291818387200] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:16:10,796 [Thread-6:140633195050752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:35:57,059 [Thread-6:139988911666944] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:36:00,194 [Thread-11:139988911666944] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:36:18,319 [Thread-6:140357140444928] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:36:29,601 [Thread-11:140357140444928] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:36:42,126 [Thread-6:140327372445440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:37:57,253 [Thread-11:140327372445440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:39:28,523 [Thread-6:140384820782848] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:42:56,556 [Thread-11:140257928410880] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 16:48:46,831 [Thread-6:139843598284544] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:14:34,580 [Thread-49:139634352846592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:16:09,280 [Thread-50:139634352846592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
