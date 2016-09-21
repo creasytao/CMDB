@@ -1,7 +1,7 @@
 #coding:utf-8
 from django import forms
 from django.contrib.auth.models import User
-from bootstrap_toolkit.widgets import BootstrapDateInput, BootstrapTextInput, BootstrapUneditableInput
+#from bootstrap_toolkit.widgets import BootstrapDateInput, BootstrapTextInput, BootstrapUneditableInput
 from cmdb.models import *
 
 class LoginForm(forms.Form):
@@ -36,6 +36,8 @@ class LoginForm(forms.Form):
 
 class ChangepwdForm(forms.Form):
     oldpassword = forms.CharField(
+        max_length=128,
+        min_length=6,
         required=True,
         label=u"原密码",
         error_messages={'required': u'请输入原密码'},
@@ -46,6 +48,8 @@ class ChangepwdForm(forms.Form):
         ),
     )
     newpassword1 = forms.CharField(
+        max_length=128,
+        min_length=6,
         required=True,
         label=u"新密码",
         error_messages={'required': u'请输入新密码'},
@@ -56,6 +60,8 @@ class ChangepwdForm(forms.Form):
         ),
     )
     newpassword2 = forms.CharField(
+        max_length=128,
+        min_length=6,
         required=True,
         label=u"确认密码",
         error_messages={'required': u'请再次输入新密码'},
@@ -65,6 +71,7 @@ class ChangepwdForm(forms.Form):
             }
         ),
      )
+
     def clean(self):
         if not self.is_valid():
             raise forms.ValidationError(u"所有项都为必填项")
@@ -73,3 +80,4 @@ class ChangepwdForm(forms.Form):
         else:
             cleaned_data = super(ChangepwdForm, self).clean()
         return cleaned_data
+

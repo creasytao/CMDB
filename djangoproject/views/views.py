@@ -11,7 +11,7 @@ from django.core import serializers
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
-from bootstrap_toolkit.widgets import BootstrapUneditableInput
+#from bootstrap_toolkit.widgets import BootstrapUneditableInput
 from django.contrib.auth.decorators import login_required
 from mywrapper import _auth
 
@@ -75,7 +75,7 @@ def logout(request):
 def changepwd(request):
     redirect_to=request.GET['next']
     if request.method == 'GET':
-        form = forms.ChangepwdForm()
+        form = ChangepwdForm()
         return render_to_response(
             'changepwd.html',
             locals()

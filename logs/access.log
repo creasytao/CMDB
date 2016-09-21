@@ -7328,3 +7328,115 @@ Traceback (most recent call last):
   File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
     % (callback.__module__, view_name))
 ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:28:54,345 [Thread-12:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:29:15,809 [Thread-18:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:31:55,957 [Thread-20:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:32:02,359 [Thread-33:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:32:03,759 [Thread-37:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:32:05,259 [Thread-40:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-09-20 17:35:13,484 [Thread-50:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:35:31,645 [Thread-51:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:35:37,293 [Thread-62:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:35:38,977 [Thread-65:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:35:43,298 [Thread-74:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:35:56,268 [Thread-76:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:36:55,602 [Thread-77:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:37:01,443 [Thread-81:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:37:04,827 [Thread-89:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:37:07,631 [Thread-91:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:38:35,340 [Thread-108:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:38:47,052 [Thread-110:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:38:51,333 [Thread-112:140600116508416] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:39:01,635 [Thread-113:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /changepwd/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 47, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 78, in changepwd
+    form = forms.ChangepwdForm()
+NameError: global name 'forms' is not defined
+2016-09-20 17:39:14,258 [Thread-115:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /changepwd/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 47, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 78, in changepwd
+    form = forms.ChangepwdForm()
+NameError: global name 'forms' is not defined
+2016-09-20 17:39:38,818 [Thread-126:140600116508416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /changepwd/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 47, in _login
+    return func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 78, in changepwd
+    form = forms.ChangepwdForm()
+NameError: global name 'forms' is not defined
+2016-09-20 17:40:23,785 [Thread-2:140251687286528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /changepwd/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 78, in changepwd
+    form = forms.ChangepwdForm()
+NameError: global name 'forms' is not defined
+2016-09-20 17:40:54,532 [Thread-2:140123102533376] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /changepwd/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/root/djangoproject/djangoproject/views/views.py", line 78, in changepwd
+    form = forms.ChangepwdForm()
+NameError: global name 'forms' is not defined
+2016-09-20 17:42:16,666 [Thread-10:139947277416192] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:42:36,109 [Thread-12:139947277416192] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-20 17:42:39,207 [Thread-15:139947277416192] [django.request:182] [base:get_response] [WARNING]- Forbidden (Permission denied): /publish/
+2016-09-21 10:09:37,387 [Thread-19:140648354141952] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return eval(viewfunc)(request, *args, **kwargs)
+  File "<string>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'publish_req'
+2016-09-21 10:10:13,434 [Thread-27:140648354141952] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /publish/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/djangoproject/djangoproject/views/mywrapper.py", line 63, in _login
+    return eval(viewfunc)(request, *args, **kwargs)
+  File "<string>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'publish_req'
+2016-09-21 10:11:10,824 [Thread-38:140648354141952] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
