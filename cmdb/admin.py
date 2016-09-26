@@ -99,7 +99,7 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
 class PAuditAdmin(ReadOnlyModelAdmin):
     list_per_page = 30
     list_display = (
-        #'time',
+        'time',
         'project',
         'action',
         'requester',

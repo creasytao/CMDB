@@ -15,12 +15,13 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib.auth.decorators import login_required
 from mywrapper import _auth
 
-from forms import LoginForm,ChangepwdForm
+#from forms import LoginForm,ChangepwdForm,PublishForm
+from forms import *
 
 from cmdb.models import *
 import os, sys, commands, json
 
-
+import re
 import logging
 logger = logging.getLogger('sourceDns.webdns.views')
 
@@ -31,38 +32,39 @@ def index(request):
         return HttpResponseRedirect('/login')
 
 def login(request):
+
     if request.method == 'GET':
         form = LoginForm()
         return render_to_response(
             'login.html',
             locals()
         )
-    else:
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = request.POST.get('username', '')
-            password = request.POST.get('password', '')
-            user = auth.authenticate(
-                username=username,
-                password=password
-            )
-            if user is not None and user.is_active:
-                auth.login(request, user)
-		return HttpResponseRedirect('/dashboard')
-            else:
-                return render_to_response(
-                    'login.html', RequestContext(
-                        request, {
-                            'form': form,
-                            'password_is_wrong':True
-                        }
-                    )
-                )
-        else:
-            return render_to_response(
-                'login.html',
-                locals()
-            )
+    #else
+    form = LoginForm(request.POST)
+    if form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = auth.authenticate(
+            username=username,
+            password=password
+        )
+        if user is not None and user.is_active:
+            auth.login(request, user)
+            if re.match( r'^/login(/)?$', request.path):
+                return HttpResponseRedirect('/')
+            #else
+    	    return HttpResponseRedirect(request.path)
+        #else
+        password_is_wrong = True
+        return render_to_response(
+            'login.html',
+            locals()
+        )
+    #else
+    return render_to_response(
+        'login.html',
+        locals()
+    )
 
 #@login_required(login_url='/')
 @_auth()
@@ -84,25 +86,21 @@ def changepwd(request):
         form = ChangepwdForm(request.POST)
         if form.is_valid():
             username = request.user.username
-            oldpassword = request.POST.get('oldpassword', '')
+            oldpassword = form.cleaned_data['oldpassword']
             user = auth.authenticate(
                 username=username,
                 password=oldpassword
             )
             if user is not None and user.is_active:
-                newpassword = request.POST.get('newpassword1', '')
+                newpassword = form.cleaned_data['newpassword1']
                 user.set_password(newpassword)
                 user.save()
 		return HttpResponseRedirect(redirect_to)
             else:
+                oldpassword_is_wrong = True
                 return render_to_response(
                     'changepwd.html',
-                    RequestContext(
-                        request, {
-                            'form': form,
-                            'oldpassword_is_wrong':True
-                        }
-                    )
+                    locals()
                 )
         else:
             return render_to_response(
@@ -123,23 +121,31 @@ def dashboard(request):
 def assets(request):
     return HttpResponseRedirect('/assets/hostlist')
 
-#@login_required(login_url='/')
-@_auth()
-def assets_hostlist(request):
-    lines=Host.objects.all().order_by("-id")
-    paginator = Paginator(lines, 10)
-    page = request.GET.get('page')
-    #阿里云esc获取
-    #EcsGet()
+def Paging(lines, size, page):
+    '''
+    分页函数
+    '''
+    paginator = Paginator(lines, size)
     try:
         show_lines = paginator.page(page)
     except PageNotAnInteger:
         show_lines = paginator.page(1)
     except EmptyPage:
-        show_lines = paginator.page(paginator.num_pages)
+        show_lines = Paginator.page(paginator.num_pages)
+    return show_lines
+
+#@login_required(login_url='/')
+@_auth()
+def assets_hostlist(request):
+    lines=Host.objects.all().order_by("id")
+    page = request.GET.get('page')
+    #阿里云esc获取
+    #EcsGet()
+
     return render_to_response(
         'hostlist.html',
-        locals()
+        {'show_lines':Paging(lines, 15, page),
+         'request':request}
     )
 
 #@login_required(login_url='/')
@@ -159,21 +165,103 @@ def configure(request):
     )
 
 #@login_required(login_url='/')
-@_auth()
+@_auth(group='publish', viewfunc='views.audit_req')
+@_auth(group='admin')
 def audit(request):
+    paudit_id = request.GET.get('paudit_id')
+
+    result_id =  request.GET.get('result')
+    if result_id:
+        paudit = PAudit.objects.filter(id=result_id)
+        for i in paudit:
+            paudit_result=i.result
+            return render_to_response('format_retrun.html',{'data':paudit_result,'request':request})
+
+    if paudit_id:
+        paudit = PAudit.objects.filter(id=paudit_id)
+        data = []
+        for i in paudit:
+            data.append({'id':paudit_id,
+                        'project':i.project.aliasname,
+                         'action':i.action.aliasname,
+                         'version':i.version,
+                         'requester':i.requester.username,
+                         'detail':i.detail
+                        })
+        return publish(request,data=data)
+
+    lines = PAudit.objects.all().order_by("-time")
+    page = request.GET.get('page')
+    link = True
     return render_to_response(
         'audit.html',
-        locals()
+        {
+            'show_lines': Paging(lines, 10, page),
+            'request': request,
+            'link':link
+        }
+    )
+
+#@login_required(login_url='/')
+@_auth(group='publish')
+def audit_req(request):
+    result_id =  request.GET.get('result')
+    if result_id:
+        paudit = PAudit.objects.filter(id=result_id)
+        for i in paudit:
+            paudit_result=i.result
+            return render_to_response('format_retrun.html',{'data':paudit_result,'request':request})
+    #多对多反查，已知用户查项目
+    project = User.objects.get(
+        username=request.user.username
+    ).project_set.all()
+    data = []
+    for i in project:
+        p=PAudit.objects.filter(project__id=i.id)
+        for j in p:
+            data.append({'id':j.id,
+                        'time':j.time,
+                         'project':j.project,
+                         'action':j.action,
+                         'requester':j.requester,
+                         'username':j.username,
+                         'version':j.version,
+                         'detail':j.detail,
+                         'result':j.result,
+                         'status':j.status
+                        })
+
+    lines = sorted(data, key= lambda x:x['time'], reverse = True)
+    page = request.GET.get('page')
+    return render_to_response(
+        'audit.html',
+        {
+            'show_lines': Paging(lines, 10, page),
+            'request': request
+        }
     )
 
 
 #@login_required(login_url='/')
 @_auth(group='publish', viewfunc='views.publish_req')
 @_auth(group='admin')
-def publish(request):
+def publish(request, *agrgs, **kwargs):
     '''
     项目发布执行页
     '''
+    if kwargs:
+        if kwargs['data']:
+            for i in kwargs['data']:
+                project=i['project']
+                action=i['action']
+                version=i['version']
+                detail=i['detail']
+                requester=i['requester']
+            return render_to_response(
+                'publish_call.html',
+                locals()
+            )
+
     project_list=Project.objects.all()
     action_list=Action.objects.all()
     #requester_list=Requester.objects.all()
@@ -218,6 +306,32 @@ def getaction(request):
         #print(e)
         logger.error(e)
 
+@_auth()
+def Requester(request):
+    '''
+    提交发布申请
+    '''
+    try:
+        project = request.POST.get('project', None)
+        action = request.POST.get('action', None)
+        version = request.POST.get('version', None)
+        requester = request.POST.get('requester', None)
+        detail = request.POST.get('detail', None)
+        Project.objects.get(aliasname=project)
+        pa = PAudit(
+            project = Project.objects.get(aliasname=project),
+            action = Action.objects.get(aliasname=action),
+            version = version,
+            requester = User.objects.get(username=requester),
+            detail = detail
+        )
+        pa.save()
+        return JsonResponse({'your_msg':'提交成功'})
+    except Exception, e:
+        logger.error(e)
+        return JsonResponse({'your_msg':'谁在搞飞机'})
+
+
 
 #@login_required(login_url='/')
 @_auth()
@@ -225,30 +339,24 @@ def saltcall(request):
     try:
         project=request.POST.get('project','')
         action=request.POST.get('action','')
-        sponsor=request.POST.get('sponsor','')
+        requester=request.POST.get('requester','')
         Operator=request.POST.get('Operator','')
         detail=request.POST.get('detail','')
-        P=Project.objects.filter(project_name=project)
+        P=Project.objects.filter(aliasname=project)
         for a in P:
-            project_id=a.id
-        A=Action.objects.filter(action_name=action)
+            project_name=a.project_name
+        A=Action.objects.filter(aliasname=action)
         for b in A:
-            action_id=b.id
-        S=Requester.objects.filter(requester_name=sponsor)
-        for c in S:
-            sponsor_id=c.id
-        U=User.objects.filter(username=Operator)
-        for d in U:
-            username_id=d.id
+            action_name=b.action_name
         #万能的脚本呀
-        cmd = "python script/run.py -o %s -x %s" % (project, action)
+        cmd = "python script/run.py -o %s -x %s" % (project_name, action_name)
         status, msg = commands.getstatusoutput(cmd)
         status = 0 if status != 0 else 1
         wdb =  PAudit(
-            project_id=project_id,
-            action_id=action_id ,
-            requester_id = sponsor_id,
-            username_id = username_id,
+            project = Project.objects.get(aliasname=project),
+            action = Action.objects.get(aliasname=action),
+            requester = User.objects.get(username=requester),
+            username = User.objects.get(username=Operator),
             detail = detail,
             result = msg,
             status = status
@@ -261,7 +369,6 @@ def saltcall(request):
             }
         )
     except Exception,e:
-        #print(e)
         logger.error(e)
 
 # restful api

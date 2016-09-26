@@ -80,3 +80,4 @@ class ChangepwdForm(forms.Form):
         else:
             cleaned_data = super(ChangepwdForm, self).clean()
         return cleaned_data
+

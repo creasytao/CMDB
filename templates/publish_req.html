@@ -51,7 +51,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">申请人:&nbsp;</label>
 		<div class="col-sm-10">
-			<select id="sponsor"  name='people1' class="form-control" data-toggle="tooltip" role="form">
+			<select id="requester"  name='people1' class="form-control" data-toggle="tooltip" role="form">
 				<option>{{ request.user.username }}</option>
 			</select>
 		 </div>
@@ -65,19 +65,17 @@
 	<br>
         <div class="form-group">
 		 <label class="col-sm-2 control-label">&nbsp;</label>
-                 <div class="col-sm-10">
+	    <div class="col-sm-10">
 			<button id="my-form" type="button" class="btn btn-primary">提交</button>
-                 </div>
+	    </div>
         </div>
 
 </form>
 </div>
 
-
 <div class="container">
 	<pre id="result" class="pre-scrollable"></pre>
 </div>
-
 
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
@@ -137,22 +135,23 @@
         var project = $("#projec").val();
         var action = $("#Action").val();
         var version = $("#version").val();
+        var requester = $("#requester").val();
         var detail = $("#detail").val();
         //console.log(project,action,sponsor,Operator,detail)
       	alert("你非常确定你要这么干？？？");
-	if(project==null || action==null || detail.length==0 || sponsor==null){
+	if(project==null || action==null || detail.length==0 || requester==null){
       		alert("二货，你妈叫你回家吃饭");
       		return false;
    	}
         $.ajax({
-                url: '/saltcall/',
+                url: '/requester/',
                 type:'post',
                 dataType:'json',
-                data: {'project': project, 'action': action, 'version': version, 'sponsor': sponsor, 'Operator': Operator, 'detail': detail },
+                data: {'project': project, 'action': action, 'version': version, 'requester': requester, 'detail': detail },
                 success:function(ret)
                 {
 			console.log(ret)
-			$('#result').html(ret.msg);
+			$('#result').html(ret.your_msg);
                 }
         });
       });

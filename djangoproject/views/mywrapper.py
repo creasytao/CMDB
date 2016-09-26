@@ -8,7 +8,8 @@
 # @brief       :
 from functools import wraps
 from django.http import HttpResponse, HttpResponseRedirect
-from django.core.exceptions import PermissionDenied
+from django.shortcuts import render_to_response
+#from django.core.exceptions import PermissionDenied
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -42,6 +43,7 @@ def _auth(func=None, group=None, redirect=None, viewfunc=None):
             if not username:
                 logger.warn("没有登录")
                 return views.login(request, *args, **kwargs)
+                #return HttpResponseRedirect('/login')
             elif not group:
                 logger.debug("登录检查，登录用户是:       %s" % username)
                 return func(request, *args, **kwargs)
@@ -73,9 +75,8 @@ def _auth(func=None, group=None, redirect=None, viewfunc=None):
                 return func(request, *args, **kwargs)
 
             logger.warn("用户:%s 没有分配合适的组权限,将禁止访问" % username)
-            #return views.logout(request, *args, **kwargs)
-            #return HttpResponse(status=403)
-            raise PermissionDenied
+            #raise PermissionDenied
+            return render_to_response('403.html',{'request':request})
 
         return _login
     return __auth

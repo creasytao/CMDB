@@ -50,6 +50,7 @@ urlpatterns = patterns('',
 
     url(r'^saltcall/$', cmdb_views.saltcall),
     url(r'^getaction/$', cmdb_views.getaction),
+    url(r'^requester/$', cmdb_views.Requester),
 
     #RESTfull API 相关
     url(r'^api/', include(router.urls)),

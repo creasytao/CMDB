@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
 
 {% block title %}
-
-仪表板
-
+发布审计
 {% endblock %}
-
+{% load bootstrap_toolkit %}  
 
 {% block page-content %}
-<br></br>
-<h1>莫慌，我还要审计一会儿</h1>
-
-
-
+    <h1></h1>  
+    <pre>
+    <table class="table table-striped table-hover">  
+        <tr>  
+            <td><strong>时间</strong></td>  
+            <td><strong>项目</strong></td>  
+            <td><strong>操作</strong></td>  
+            <td><strong>申请人</strong></td>  
+            <td><strong>操作人</strong></td>  
+	    <td><strong>版本号</strong></td>  
+            <td><strong>上线说明</strong></td>  
+            <td><strong>结果</strong></td>  
+            <td><strong>状态</strong></td>  
+        </tr>  
+        {% for paudit in show_lines %}  
+        <tr>  
+		<td>{{ paudit.time }}</td>  
+                <td>{{ paudit.project }}</td>  
+		<td>{{ paudit.action }}</td>  
+		<td>{{ paudit.requester }}</td>  
+		<td>{% if paudit.username %}{{ paudit.username }}{% endif %}</td>  
+		<td>{{ paudit.version }}</td>  
+		<td>{{ paudit.detail }}</td>  
+		<td><a href="/audit/?result={{ paudit.id }}">{% if paudit.result %}查看{% endif %}</a></td>  
+	    {% if paudit.status %}
+		<td>已处理</td>  
+	    {% else %}
+		{% if link %}
+		<td><a href="/audit/?paudit_id={{ paudit.id }}">未处理</a></td>  
+		{% else %}
+		<td>未处理</td>  
+		{% endif %}
+	    {% endif %}
+        </tr>  
+        {% endfor %}  
+    </table>  
+    </pre>
+   {% bootstrap_pagination show_lines url="/audit/?page=1" align="center" size="smaller"%}  
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+这是一个返回数据页
+
+{% endblock %}
+
+
+{% block page-content %}
+<br></br>
+
+<input type="button" name="Submit" onclick="javascript:history.back(-1);" style="float:right"  value="返回上一页">
+<pre>{{ data }}</pre>
+<input type="button" name="Submit" onclick="javascript:history.back(-1);" style="float:right"  value="返回上一页">
+{% endblock %}
