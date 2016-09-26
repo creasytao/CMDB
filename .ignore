@@ -1,7 +1,0 @@
-.git
-logs
-tags
-.python-version
-nohup.out
-*.pyc
-*.sw[po]
