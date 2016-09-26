@@ -136,18 +136,32 @@ def Paging(lines, size, page):
     return show_lines
 
 #@login_required(login_url='/')
-@_auth()
+@_auth(group="admin",viewfunc='views.assets_hostlist_admin')
 def assets_hostlist(request):
     lines=Host.objects.all().order_by("id")
     page = request.GET.get('page')
-    #阿里云esc获取
-    #EcsGet()
 
     return render_to_response(
         'hostlist.html',
         {'show_lines':Paging(lines, 15, page),
          'request':request}
     )
+
+@_auth(group="admin")
+def assets_hostlist_admin(request):
+    update = request.GET.get('update', False)
+    if update:
+        EcsGet()
+    lines=Host.objects.all().order_by("id")
+    page = request.GET.get('page')
+
+    return render_to_response(
+        'hostlist.html',
+        {'show_lines':Paging(lines, 15, page),
+         'request':request,
+         'update':True}
+    )
+
 
 #@login_required(login_url='/')
 @_auth()
@@ -337,7 +351,7 @@ def Requester(request):
             dstemail.append(user.email)
         send_mail('发布申请',"项目："+project+"\n动作："+action+
                   "\n详细描述："+detail+"\n\t\t\t申请人："+requester,
-                  DEFAULT_FROM_EMAIL,dstemail,fail_silently=False)
+                  DEFAULT_FROM_EMAIL,dstemail)
         return JsonResponse({'your_msg':'提交成功'})
     except Exception, e:
         logger.error(e)
@@ -376,9 +390,9 @@ def saltcall(request):
         dstemail=[]
         for user in users:
             dstemail.append(user.email)
-        send_mail('发布申请',"项目："+project+"\n动作："+action+
+        send_mail('发布完成',"项目："+project+"\n动作："+action+
                   "\n操作结果："+msg+"\n\t\t\t操作人："+Operator,
-                  DEFAULT_FROM_EMAIL,dstemail,fail_silently=False)
+                  DEFAULT_FROM_EMAIL,dstemail)
         return JsonResponse(
             {
                 'status':status,
