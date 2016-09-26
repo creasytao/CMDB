@@ -10,7 +10,8 @@
     <pre>
     <table class="table table-striped table-hover">  
         <tr>  
-            <td><strong>时间</strong></td>  
+            <td><strong>申请时间</strong></td>  
+            <td><strong>完成时间</strong></td>  
             <td><strong>项目</strong></td>  
             <td><strong>操作</strong></td>  
             <td><strong>申请人</strong></td>  
@@ -22,7 +23,8 @@
         </tr>  
         {% for paudit in show_lines %}  
         <tr>  
-		<td>{{ paudit.time }}</td>  
+		<td>{{ paudit.StartTime }}</td>  
+		<td>{{ paudit.EndTime }}</td>  
                 <td>{{ paudit.project }}</td>  
 		<td>{{ paudit.action }}</td>  
 		<td>{{ paudit.requester }}</td>  

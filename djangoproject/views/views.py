@@ -10,13 +10,14 @@ from django.core import serializers
 
 from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.mail import send_mail
 
 #from bootstrap_toolkit.widgets import BootstrapUneditableInput
 from django.contrib.auth.decorators import login_required
 from mywrapper import _auth
 
-#from forms import LoginForm,ChangepwdForm,PublishForm
 from forms import *
+from ..settings import *
 
 from cmdb.models import *
 import os, sys, commands, json
@@ -189,8 +190,9 @@ def audit(request):
                          'detail':i.detail
                         })
         return publish(request,data=data)
+        #return publish(request)
 
-    lines = PAudit.objects.all().order_by("-time")
+    lines = PAudit.objects.all().order_by("-StartTime")
     page = request.GET.get('page')
     link = True
     return render_to_response(
@@ -220,7 +222,8 @@ def audit_req(request):
         p=PAudit.objects.filter(project__id=i.id)
         for j in p:
             data.append({'id':j.id,
-                        'time':j.time,
+                        'StartTime':j.StartTime,
+                         'EndTime':j.EndTime,
                          'project':j.project,
                          'action':j.action,
                          'requester':j.requester,
@@ -231,7 +234,7 @@ def audit_req(request):
                          'status':j.status
                         })
 
-    lines = sorted(data, key= lambda x:x['time'], reverse = True)
+    lines = sorted(data, key= lambda x:x['StartTime'], reverse = True)
     page = request.GET.get('page')
     return render_to_response(
         'audit.html',
@@ -252,6 +255,7 @@ def publish(request, *agrgs, **kwargs):
     if kwargs:
         if kwargs['data']:
             for i in kwargs['data']:
+                paudit_id=i['id']
                 project=i['project']
                 action=i['action']
                 version=i['version']
@@ -326,6 +330,14 @@ def Requester(request):
             detail = detail
         )
         pa.save()
+        group = Group.objects.get(name='admin')
+        users = group.user_set.all()
+        dstemail = []
+        for user in users:
+            dstemail.append(user.email)
+        send_mail('发布申请',"项目："+project+"\n动作："+action+
+                  "\n详细描述："+detail+"\n\t\t\t申请人："+requester,
+                  DEFAULT_FROM_EMAIL,dstemail,fail_silently=False)
         return JsonResponse({'your_msg':'提交成功'})
     except Exception, e:
         logger.error(e)
@@ -337,11 +349,13 @@ def Requester(request):
 @_auth()
 def saltcall(request):
     try:
+        paudit_id=request.GET.get('paudit_id', None)
         project=request.POST.get('project','')
         action=request.POST.get('action','')
         requester=request.POST.get('requester','')
         Operator=request.POST.get('Operator','')
-        detail=request.POST.get('detail','')
+        #detail=request.POST.get('detail','')
+
         P=Project.objects.filter(aliasname=project)
         for a in P:
             project_name=a.project_name
@@ -352,16 +366,19 @@ def saltcall(request):
         cmd = "python script/run.py -o %s -x %s" % (project_name, action_name)
         status, msg = commands.getstatusoutput(cmd)
         status = 0 if status != 0 else 1
-        wdb =  PAudit(
-            project = Project.objects.get(aliasname=project),
-            action = Action.objects.get(aliasname=action),
-            requester = User.objects.get(username=requester),
-            username = User.objects.get(username=Operator),
-            detail = detail,
-            result = msg,
-            status = status
-        )
-        wdb.save()
+
+        obj = PAudit.objects.get(id=paudit_id)
+        obj.username=User.objects.get(username=Operator)
+        obj.result=msg
+        obj.status=status
+        obj.save()
+        users = User.objects.filter(username=requester)
+        dstemail=[]
+        for user in users:
+            dstemail.append(user.email)
+        send_mail('发布申请',"项目："+project+"\n动作："+action+
+                  "\n操作结果："+msg+"\n\t\t\t操作人："+Operator,
+                  DEFAULT_FROM_EMAIL,dstemail,fail_silently=False)
         return JsonResponse(
             {
                 'status':status,

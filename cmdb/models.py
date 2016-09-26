@@ -61,6 +61,12 @@ class Service(models.Model):
         if not self.script:self.script = None
         super(Service, self).save(*args, **kwargs)
 
+class SaltStack(models.Model):
+    id = models.CharField(
+        max_length=50,
+        primary_key=True,
+        unique=True)
+
 class Host(models.Model):
     hostname = models.CharField(
         max_length=50,
@@ -89,6 +95,11 @@ class Host(models.Model):
         max_length=20,
         default='linux',
         verbose_name='操作系统版本')
+    saltid = models.OneToOneField(
+        SaltStack,
+        null=True,
+        blank=True
+    )
 
     def __unicode__(self):
         return self.private_address
@@ -147,7 +158,13 @@ class PAudit(models.Model):
     '''
     项目审计
     '''
-    time = models.DateTimeField(auto_now_add=True)
+    StartTime = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='开始时间')
+    EndTime = models.DateTimeField(
+        auto_now=True,
+        null=True,
+        verbose_name='结束时间')
     project = models.ForeignKey(
         Project,
         related_name='pa_p',

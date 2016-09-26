@@ -101,7 +101,7 @@
       		return false;
    	}
         $.ajax({
-                url: '/saltcall/',
+		url: "/saltcall/?paudit_id={{ paudit_id }}",
                 type:'post',
                 dataType:'json',
                 data: {'project': project, 'action': action, 'version': version, 'requester': requester, 'Operator': Operator, 'detail': detail },

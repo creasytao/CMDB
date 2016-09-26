@@ -99,7 +99,7 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
 class PAuditAdmin(ReadOnlyModelAdmin):
     list_per_page = 30
     list_display = (
-        'time',
+        'StartTime',
         'project',
         'action',
         'requester',
@@ -117,15 +117,15 @@ class PAuditAdmin(ReadOnlyModelAdmin):
         'detail',
         'result']
     list_filter = (
-        'time',
+        'StartTime',
         'project',
         'username',
         'requester',
         'action',
         'status')
     #日期过滤
-    date_hierarchy = 'time'
-    ordering = ('-time',)
+    date_hierarchy = 'StartTime'
+    ordering = ('-StartTime',)
 
 #class RequestAdmin(admin.ModelAdmin):
 #    list_per_page = 30

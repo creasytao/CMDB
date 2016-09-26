@@ -28,3 +28,8 @@ site_url = /publish
 [aliyun]
 keyid = KQVMzZVHTiSlj7f4
 keysecret = lhIT0ADM7nXj3U05D2DoZCcFJ0pjvm
+
+[salt-api]
+remoteaddr = https://127.0.0.1
+username = salt
+password = 123456
