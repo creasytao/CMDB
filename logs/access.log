@@ -279,3 +279,11 @@ Traceback (most recent call last):
   File "/server/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
     % (callback.__module__, view_name))
 ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-15 12:55:08,683 [Thread-5:140137099413248] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-15 12:55:43,746 [Thread-11:140137099413248] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-15 13:17:16,570 [Thread-303:140137081423616] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/data/software/pyenv/versions/2.7.5/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-15 13:34:22,953 [Thread-386:140136864020224] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

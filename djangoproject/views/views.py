@@ -377,7 +377,8 @@ def saltcall(request):
         for b in A:
             action_name=b.action_name
         #万能的脚本呀
-        cmd = "python script/run.py -o %s -x %s" % (project_name, action_name)
+        #cmd = "python script/run.py -o %s -x %s" % (project_name, action_name)
+        cmd = "hostname"
         status, msg = commands.getstatusoutput(cmd)
         status = 0 if status != 0 else 1
 

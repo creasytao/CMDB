@@ -7,10 +7,10 @@ allowed_hosts = []
 session_expire_at_browser_close = True
 
 [db]
-host = 192.168.88.92
+host = 10.99.0.4
 username = django
 password = 123456
-database = django
+database = cmdb
 
 [mail]
 email_host = smtp.exmail.qq.com
