@@ -411,7 +411,9 @@ class UserViewSet(viewsets.ModelViewSet):
         queryset = User.objects.all()
         serializer_class = UserSerializer
 
-#=========
+#===============================
+# 阿里云资产
+#================================
 import aliyun
 import aliyun.api
 
@@ -470,3 +472,7 @@ def EcsGet():
                 except Exception,e:
                     #logger.error(e)
                     print(e)
+#=============================
+# 青云资产
+#============================
+

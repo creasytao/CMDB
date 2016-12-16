@@ -18,11 +18,11 @@ email_port = 25
 email_host_user = monitor@zhan.com
 email_host_password = 6yTUlNTf
 email_use_tls = False
-default_from_email = 运维CMDB系统 <monitor@zhan.com>
+default_from_email = 运维系统 <monitor@zhan.com>
 
 [admin]
-header = 运维CMDB管理后台
-title = CMDB后台
+header = 运维管理后台
+title = 后台
 site_url = /publish
 
 [aliyun]

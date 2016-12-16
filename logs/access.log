@@ -287,3 +287,23 @@ Traceback (most recent call last):
     % (callback.__module__, view_name))
 ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
 2016-12-15 13:34:22,953 [Thread-386:140136864020224] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-15 15:57:00,392 [Thread-141:140208029787904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-15 16:05:42,785 [Thread-200:140208029787904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-15 16:08:31,415 [Thread-232:140208029787904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-15 16:49:23,035 [Thread-12:140690412619520] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
