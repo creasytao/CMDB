@@ -5,7 +5,6 @@ import cPickle as pickle
 
 from django.db import models
 from django.contrib.auth.models import User,Group
-
 class Idc(models.Model):
     '''
     idc表
@@ -22,6 +21,7 @@ class Idc(models.Model):
     region = models.CharField(max_length=100,
                               verbose_name='地域')
 
+    @property
     def __unicode__(self):
         return self.idc_name
 

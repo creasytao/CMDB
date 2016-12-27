@@ -1,3 +1,4 @@
+#coding:utf-8
 from django.db import models
 
 # Create your models here.
@@ -19,4 +20,3 @@ class Instance(models.Model):
         unique=True,
         verbose_name='浮动ip')
     status = models.BooleanField(default=0)
-

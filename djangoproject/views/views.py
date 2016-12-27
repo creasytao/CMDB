@@ -25,7 +25,6 @@ import os, sys, commands, json
 import re
 import logging
 logger = logging.getLogger('sourceDns.webdns.views')
-
 def index(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect('/dashboard')
@@ -314,7 +313,6 @@ def getaction(request):
         action=Project.objects.get(
             aliasname=request.POST['project']
         ).action.all()
-
         data = serializers.serialize(format, action)
 
         #return JsonResponse(data)
@@ -476,3 +474,79 @@ def EcsGet():
 # 青云资产
 #============================
 
+def MyPagination(total, size):
+    countpage = total/size +1 if total%size >0 else total/size
+    return countpage
+
+class QingCloud:
+    def __init__(self, zone, access_key_id, secret_access_key, pagesize=20):
+        import qingcloud.iaas
+        self.data = {}
+        self.zone = zone
+        self.access_key_id = access_key_id
+        self.secret_access_key = secret_access_key
+        self.pagesize = pagesize
+        self.conn = qingcloud.iaas.connect_to_zone(
+            self.zone, self.access_key_id, self.secret_access_key, lowercase=True
+        )
+
+    def GetData(self, object):
+        self.data[object] = []
+        myfunc = getattr(self.conn, "describe_%ss" % object)
+        for i in range(MyPagination(myfunc()['total_count'], self.pagesize)):
+            self.data[object].extend(
+                myfunc(offset=i*self.pagesize, limit=self.pagesize)["%s_set" % object]
+            )
+
+    def WriteToDb(self, ):
+        pass
+
+    def ViewsDb(self, ):
+        pass
+
+    def ClearMEM(self, object=''):
+        if object:
+            self.data[object] = []
+            return
+        self.data = {}
+
+class WriteDB(QingCloud):
+    def Instance(self, ):
+        for i in self.data['instance']:
+            private_ip, vcpus_current, memory_current, os_family, instance_id = '','','','',''
+            instance_name = i['instance_name']
+            instance_id = i['instance_id']
+            vcpus_current = i['vcpus_current']
+            memory_current = i['memory_current']
+            os_family = i['image']['os_family']
+            status = i['status']
+            if i['vxnets']:
+                vxnet_name, private_ip = i['vxnets'][0]['vxnet_name'], i['vxnets'][0]['private_ip']
+            else:
+                vxnet_name = private_ip = ''
+            print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (instance_id, vcpus_current, memory_current, os_family, status, private_ip, vxnet_name, instance_name)
+            wdb = Host(
+
+            )
+
+'''
+
+n=QingCloud('PEK3A','LORLHQIRZXQZRLLOJBIW','JsEIDxauDgDIq77OlmQ36U6LFUnXWOFE0vl6muLv')
+instances=n.GetData('instance')
+
+
+
+        volumes = conn.describe_volumes()
+        status = volumes[u'volume_set'][0]['status']
+        size = volumes[u'volume_set'][0]['size']
+        instance_id = volumes[u'volume_set'][0]['instance']['instance_id']
+
+    private_ip = instances['instance_set'][0]['vxnets'][0]['private_ip']
+    vcpus_current = instances['instance_set'][0]['vcpus_current']
+    memory_current = instances['instance_set'][0]['memory_current']
+    os_family = instances['instance_set'][0]['image']['os_family']
+    instance_id = instances['instance_set'][0]['instance_id']
+
+
+        a=instances.
+'''

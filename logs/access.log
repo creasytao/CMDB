@@ -307,3 +307,299 @@ Traceback (most recent call last):
   File "/root/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
     % (callback.__module__, view_name))
 ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-16 17:45:21,859 [Thread-7:123145349558272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-16 17:45:28,693 [Thread-17:123145349558272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-16 17:45:49,784 [Thread-35:123145349558272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-19 11:02:17,630 [Thread-39:123145349558272] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-20 14:16:28,940 [Thread-5:123145435066368] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-27 13:44:45,719 [Thread-5:123145377316864] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-12-27 13:47:10,769 [Thread-2:123145507516416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:49:03,855 [Thread-4:123145385021440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:52:51,040 [Thread-2:123145566515200] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:53:10,991 [Thread-14:123145566515200] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:53:53,029 [Thread-2:123145387339776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:54:03,113 [Thread-7:123145387339776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2016-12-27 13:54:06,556 [Thread-8:123145387339776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
+2016-12-27 13:54:46,149 [Thread-2:123145351069696] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/cmdb/host/
+Traceback (most recent call last):
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 81, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 324, in get_queryset
+    filters_use_distinct) = self.get_filters(request)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/views/main.py", line 133, in get_filters
+    self.model, self.model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 161, in create
+    model, model_admin, field_path=field_path)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 175, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/contrib/admin/filters.py", line 197, in field_choices
+    return field.get_choices(include_blank=False)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_choices
+    limit_choices_to)]
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 56, in smart_text
+    return force_text(s, encoding, strings_only, errors)
+  File "/Users/meilin.li/.virtualenvs/django_1.8.2/lib/python2.7/site-packages/django/utils/encoding.py", line 92, in force_text
+    s = six.text_type(s)
+TypeError: 'unicode' object is not callable
