@@ -13,12 +13,12 @@ password = 123456
 database = cmdb
 
 [mail]
-email_host = smtp.ym.163.com
+email_host = mail.songshuai.com.cn
 email_port = 25
-email_host_user = monitor@linkonworks.net
-email_host_password = JgcauNABxko
+email_host_user = ops@songshuai.com.cn
+email_host_password = lnyl8KzCqOFYTA
 email_use_tls = False
-default_from_email = 运维系统 <monitor@linkonworks.net>
+default_from_email = 运维系统 <ops@songshuai.com.cn>
 
 [admin]
 header = 运维管理后台
@@ -33,3 +33,7 @@ keysecret = lhIT0ADM7nXj3U05D2DoZCcFJ0pjvm
 remoteaddr = https://127.0.0.1
 username = salt
 password = 123456
+
+[k8s-helm]
+hemlhost=10.110.82.198
+hemlport=44134

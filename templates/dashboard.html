@@ -6,11 +6,36 @@
 
 {% endblock %}
 
+{% block style %}
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .nav ul li{
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        margin: 0px 10px;
+        list-style: none;
+        text-align: center;
+    }
 
+{% endblock %}
 {% block page-content %}
-<br></br>
-<h1>仪表板不错吧，你看到的都是假象~~~</h1>
-
-
+{#	<script src="http://code.jquery.com/jquery.min.js"></script>#}
+<iframe id="iframe" src ="https://ops.lk199.cn/kibana" frameborder="0"></iframe>
+<script>
+$(function(){
+    $('.nav ul li').on('click',function(){
+        $("#iframe").attr('src',$(this).data('url'));
+    })
+    $("#iframe").attr('width', $(window).width());
+    $("#iframe").attr('height', $(window).height()-44);
+    $(window).resize(function () {          //当浏览器大小变化时
+        $("#iframe").attr('width', $(window).width());
+        $("#iframe").attr('height', $(window).height()-44);
+    });
+})
+</script>
 
 {% endblock %}

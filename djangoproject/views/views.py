@@ -12,15 +12,17 @@ from django.forms.formsets import formset_factory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.mail import send_mail
 
+
 #from bootstrap_toolkit.widgets import BootstrapUneditableInput
 from django.contrib.auth.decorators import login_required
 from mywrapper import _auth
 
 from forms import *
 from ..settings import *
-
+import yaml
 from cmdb.models import *
 import os, sys, commands, json
+from pyhelm.tiller import Tiller
 
 import re
 import logging
@@ -301,6 +303,61 @@ def publish_req(request):
         'publish_req.html',
         locals()
     )
+@_auth(group='publish')
+@_auth(group='admin')
+def helm_list(request):
+    ins = Tiller(K8S_HOST, K8S_PORT)
+    if request.method == 'GET':
+        print 'GET'
+        action = request.GET.get('action', False)
+        name = request.GET.get('name', None)
+        if action == 'detail':
+            release_status = ins.get_release_status(name)
+            release_content = ins.get_release_content(name)
+            release_history = ins.get_history(name)
+            print release_history.releases[0]
+            resource = [
+                {
+                    "type": yaml.load(x)['kind'],
+                    "content": x
+                }
+                for x in release_content.release.manifest.split('---') if yaml.load(x)
+            ]
+            # print resource
+            # resource = [ x for x in release_content.release.manifest.split('---')]
+            # release_history.releases[0]
+            return render(
+                request,'helm_detail.html',
+                {
+                    "status": release_status,
+                    "content": release_content,
+                    "history": release_history.releases,
+                    "resource": resource,
+                    "request": request
+                }
+
+            )
+        list = ins.list_releases()
+        return render(
+            request,'helm_publish.html',
+            {
+                "list_name": list,
+                "request": request
+            })
+    action = request.POST.get('action', None)
+    name = request.POST.get('name',None)
+    if action == 'rollback':
+        version = request.POST.get('version',None)
+        print type(version)
+        try:
+            rollback_result = ins.rollback_release(name=name,version=int(version))
+        except Exception,e:
+            print e
+        print rollback_result
+        return JsonResponse({'result': rollback_result})
+
+
+
 
 #@login_required(login_url='/')
 @_auth()

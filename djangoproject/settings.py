@@ -27,7 +27,8 @@ EMAIL_PORT = config.getint('mail','email_port')
 EMAIL_HOST_USER = config.get('mail','email_host_user')
 EMAIL_HOST_PASSWORD = config.get('mail','email_host_password')
 DEFAULT_FROM_EMAIL = config.get('mail','default_from_email')
-
+K8S_HOST=config.get('k8s-helm','hemlhost')
+K8S_PORT=config.get('k8s-helm','hemlport')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -57,6 +58,7 @@ INSTALLED_APPS = (
     'bootstrap_toolkit',
     'cmdb',
     'docker',
+    'cmdb.templatetags',
 #    'users',
 )
 
@@ -80,13 +82,13 @@ WSGI_APPLICATION = 'djangoproject.wsgi.application'
 
 DATABASES = {
     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-	'ENGINE': 'django.db.backends.mysql',
-	'NAME': config.get('db','database'),
-	'USER': config.get('db','username'),
-	'PASSWORD': config.get('db','password'),
-	'HOST': config.get('db','host'),
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# 	'ENGINE': 'django.db.backends.mysql',
+# 	'NAME': config.get('db','database'),
+# 	'USER': config.get('db','username'),
+# 	'PASSWORD': config.get('db','password'),
+# 	'HOST': config.get('db','host'),
     },
 #    'slave': {
 #	'ENGINE': 'django.db.backends.mysql',
@@ -100,15 +102,17 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'zh_CN'
+# LANGUAGE_CODE = 'zh-Hans'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'PRC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
+DATETIME_FORMAT = "Y-m-d"
 #影响date_hierarchy
-USE_TZ = False
+USE_TZ = True
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = config.getboolean('session','session_expire_at_browser_close')
 #SESSION_COOKIE_AGE = config.get('session','session_cookie_age')

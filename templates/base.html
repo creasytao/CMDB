@@ -2,12 +2,13 @@
 <html lang="cn">
 <head>
 	<meta charset="utf-8">
-	<title>{% block title %}运维平台{% endblock %} - Li90.COM</title>
+	<title>{% block title %}运维平台{% endblock %} - 松鼠AI </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-
+    <style>{% block style %}{% endblock %}</style>
+{#<script src="http://code.jquery.com/jquery.min.js"></script>#}
+    <script src="/static/jquery-1.8.3/jquery.min.js"></script>
 
 
 	<!-- Le styles -->
@@ -18,20 +19,21 @@
 </head>
 <body>
 	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
-			<div class="container">
+		<div class="navbar-inner" >
+			<div class="container" >
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#">运维管理平台</a>
+				<a class="brand" href="#">主页</a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li><a class="brand" href="/dashboard">仪表板</a></li>
-						<li><a class="brand" href="/assets">资产管理</a></li>
-						<li><a class="brand" href="/configure">配置管理</a></li>
-						<li><a class="brand" href="/publish">项目发布</a></li>
+						<li><a class="brand" href="/dashboard">Dashboard</a></li>
+{#						<li><a class="brand" href="/assets">资产管理</a></li>#}
+{#						<li><a class="brand" href="/configure">配置管理</a></li>#}
+{#						<li><a class="brand" href="/publish">项目发布</a></li>#}
+                        <li><a class="brand" href="/k8shelm">容器发布</a></li>
 						<li><a class="brand" href="/audit">发布审计</a></li>
 					</ul>
 					<ul class="nav navbar-nav pull-right">
@@ -49,7 +51,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" id='page-content'>
+{#	<div class="container" id='page-content'>#}
+    <div  id='page-content'>
 {% block page-content %}
 
 
@@ -67,7 +70,8 @@
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="http://code.jquery.com/jquery.min.js"></script>
+{#	<script src="http://code.jquery.com/jquery.min.js"></script>#}
 	<script src="/static/bootstrap/js/bootstrap.js"></script>
+
 </body>
 </html>

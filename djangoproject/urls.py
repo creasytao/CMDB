@@ -52,6 +52,8 @@ urlpatterns = patterns('',
     url(r'^getaction/$', cmdb_views.getaction),
     url(r'^requester/$', cmdb_views.Requester),
 
+    url(r'^k8shelm/$',cmdb_views.helm_list),
+
     #RESTfull API 相关
     url(r'^api/', include(router.urls)),
     #主页及后台

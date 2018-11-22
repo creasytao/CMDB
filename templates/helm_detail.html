@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load extra_tags %}
+
+{% block title %}
+
+发布系统
+
+{% endblock %}
+{% block style %}
+    #container {
+    border: 1px solid #808080;
+    width: 500px
+    }
+    #txtarea {
+    border: 1px solid #f0f040;
+    background-color: #fffff0;
+    width: 100%;
+    padding: 4px;
+    margin: 5px;
+    }
+
+{% endblock %}
+
+{% block page-content %}
+
+    <div  class="ng-scope" style="margin : 0.50in;">
+        <table class="table-default-viewer" cellpadding="10px" cellspacing="10px">
+            <tbody>
+            <tr>
+                <td >
+                    <span >发布名称</span>
+                    <span>:</span>
+                    <span id="deployname" class="margin-left ng-binding" style="font-weight:bold">{{ status.name }}</span>
+                </td>
+                <td>
+                    <span >命名空间</span>
+                    <span>:</span>
+                    <span class="margin-left ng-binding" style="font-weight:bold">{{ status.namespace }}</span>
+                </td>
+                <td>
+                    <span >部署时间</span>
+                    <span>:</span>
+                    <span class="margin-left ng-binding" style="font-weight:bold">{{ status.info.first_deployed.seconds| chinese_date_format:"%Y-%m-%d %H:%M:%S" }}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="panel panel-default margin-top" >
+            <div class="panel-heading" style="cursor: pointer; background-color: #999999">
+                <div style="margin: 5px;">
+                    <div>
+                        <span >当前版本</span>
+                        <span>:</span>
+                        <span class="margin-left ng-binding">{{ content.release.version }}</span>
+                    </div>
+                    <div >
+                        <span >更新时间</span>
+                        <span>:</span>
+                        <span class="margin-left ng-binding">{{ content.release.info.last_deployed.seconds| chinese_date_format:"%Y-%m-%d %H:%M:%S" }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse collapse in" style="border-color: #ebedf1">
+                <div class="panel-body" style="border-color: #ebedf1">
+                    <div release-detail=""  class="ng-isolate-scope">
+                        <div class="release-detail" bindonce="">
+                            <table class="bk-table"  style="border-collapse: separate;border-spacing: 50px 10px">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <span >资源类型</span>
+                                        <span class="icon-updown btn-icon-grey" ></span>
+                                    </th>
+                                    <th>
+                                        <span >操作</span>
+                                        <span class="icon-updown btn-icon-grey" ></span>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for rs in resource %}
+                                    <tr  class="ng-scope">
+                                        <td class="ng-binding">
+                                            {{ rs.type }}
+                                        </td>
+                                        <td style="text-align: center">
+                                            <!-- 按钮触发模态框 -->
+                                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ rs.type }}" style="background-color: transparent">
+                                                yaml
+                                            </button>
+                                            <!-- 模态框（Modal） -->
+                                            <div align="left" class="modal fade" id="myModal{{ rs.type }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title" id="myModalLabel">查看Yaml-{{ status.name}}-{{ rs.type }}</h4>
+                                                        </div>
+                                                            <div class="modal-body" >
+                                                            <textarea id="txtarea" cols="50" rows="20">
+                                                                {{ rs.content }}
+                                                            </textarea>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+{#                                                            <button type="button" class="btn btn-primary">提交更改</button>#}
+                                                        </div>
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal -->
+                                            </div>
+                                        </td>
+                                    </tr><!-- end ngRepeat: item in vm.resources | orderBy:vm.sort.key:vm.sort.reverse -->
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for his in history %}
+        <div class="panel-group margin-top" style="margin-bottom: 20px">
+            <div class="panel panel-default ng-scope"  style="border-color: #ebedf1">
+                <div class="panel-heading"  style="cursor: pointer; background-color: #ebedf1">
+                    <div>
+                        <div class="col-sm-4">
+                            <span >版本</span>
+                            <span>:</span>
+                            <span id="rollback-verison" class="margin-left ng-binding">{{ his.version }}</span>
+                            <a class="margin-left rollback" >回滚到该版本</a>
+                        </div>
+                        <div class="col-sm-8" style="text-align: right">
+                            <span >更新时间</span>
+                            <span>:</span>
+                            <span class="margin-left ng-binding">{{ his.info.last_deployed.seconds|chinese_date_format:"%Y-%m-%d %H:%M:%S" }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end ngRepeat: release in vm.history -->
+        </div>
+        {% endfor %}
+    </div>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('.rollback').click(function(){
+        $( "#result" ).empty()
+        var name = $("#deployname").text();
+        {#console.log($(this).parent())#}
+        var version = $(this).parent().children('.ng-binding').text();
+        console.log(name,'121212',version)
+      	alert("你非常确定你要这么干？？？");
+	if(name==null || version==null){
+      		alert("二货，你妈叫你回家吃饭");
+      		return false;
+   	}
+        $.ajax({
+		        url: "/k8shelm/",
+                type: "post",
+                dataType:'json',
+                data: {'name': name, 'action': 'rollback', 'version': version},
+                success:function(ret)
+                {
+			console.log(ret)
+			$('#result').html(ret.msg);
+                }
+        });
+      });
+    });
+
+</script>
+
+
+{% endblock %}
