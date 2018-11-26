@@ -37,3 +37,6 @@ password = 123456
 [k8s-helm]
 hemlhost=10.110.82.198
 hemlport=44134
+
+[chart]
+repo=http://10.40.40.129:8080/

@@ -61,7 +61,7 @@
 {#            <button class="btn btn-link btn-xs" ng-disabled="r.attributes.status != 'DEPLOYED'" update-release="r" cluster-id="vm.cluster.cluster_id" bo-text="'cos.k8s.release.update.btn' | translate">更新</button>#}
 {#            <button class="btn btn-link btn-xs" ng-disabled="r.attributes.status == 'DELETING'" ng-click="vm.delete(r)" bo-text="'cos.cm.op.del' | translate">删除</button>#}
               <a class="brand" href="/k8shelm?action=detail&name={{ list.name }}">详情</a>
-              <a class="brand" href="/k8shelm?action=update&name={{ list.name }}">更新</a>
+              <a class="brand" href="/k8shelm?action=update&chartname=&deployname=&">更新</a>
               <a class="brand" href="/k8shelm?action=delete&name={{ list.name }}">删除</a>
           </td>
         </tr>
@@ -71,18 +71,4 @@
 
     <!-- ngIf: !vm.releases || vm.releases && vm.releases.length == 0 -->
   </div>
-    <script>
-        function padding(v) {
-     value = v + '';
-    if (value.length < 2) {
-        value = '0' + value;
-    }
-    return value;
-}
- function format(d) {
-    return !!d && typeof d !== 'string' ? (d.getFullYear() + '-' + padding(d.getMonth() + 1) + '-' + padding(d.getDate())) : d;
-
-
-
-    </script>
 {% endblock %}

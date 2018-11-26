@@ -29,6 +29,8 @@ EMAIL_HOST_PASSWORD = config.get('mail','email_host_password')
 DEFAULT_FROM_EMAIL = config.get('mail','default_from_email')
 K8S_HOST=config.get('k8s-helm','hemlhost')
 K8S_PORT=config.get('k8s-helm','hemlport')
+CHART_REPO=config.get('chart', 'repo')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -112,7 +114,7 @@ USE_I18N = True
 USE_L10N = False
 DATETIME_FORMAT = "Y-m-d"
 #影响date_hierarchy
-USE_TZ = True
+USE_TZ = False
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = config.getboolean('session','session_expire_at_browser_close')
 #SESSION_COOKIE_AGE = config.get('session','session_cookie_age')

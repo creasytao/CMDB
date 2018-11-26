@@ -23,6 +23,8 @@ import yaml
 from cmdb.models import *
 import os, sys, commands, json
 from pyhelm.tiller import Tiller
+from pyhelm.repo import RepoUtils
+from pyhelm.chartbuilder import ChartBuilder
 
 import re
 import logging
@@ -303,19 +305,23 @@ def publish_req(request):
         'publish_req.html',
         locals()
     )
-@_auth(group='publish')
-@_auth(group='admin')
+# @_auth(group='publish')
+# @_auth(group='admin')
 def helm_list(request):
     ins = Tiller(K8S_HOST, K8S_PORT)
     if request.method == 'GET':
-        print 'GET'
+        # print 'GET'
+        # chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+        # print chart_path
+
+
         action = request.GET.get('action', False)
         name = request.GET.get('name', None)
         if action == 'detail':
             release_status = ins.get_release_status(name)
             release_content = ins.get_release_content(name)
             release_history = ins.get_history(name)
-            print release_history.releases[0]
+            # print release_history.releases[0]
             resource = [
                 {
                     "type": yaml.load(x)['kind'],
@@ -348,13 +354,37 @@ def helm_list(request):
     name = request.POST.get('name',None)
     if action == 'rollback':
         version = request.POST.get('version',None)
-        print type(version)
+        # print type(version)
         try:
             rollback_result = ins.rollback_release(name=name,version=int(version))
         except Exception,e:
             print e
         print rollback_result
         return JsonResponse({'result': rollback_result})
+    if action == 'install':
+        # pass
+        namespace = request.POST.get('namespace', None)
+        chartname = request.POST.get('chartname', None)
+        deployname = request.POST.get('deployname', None)
+        values = request.POST.get('values', None)
+        chart_path = RepoUtils.from_repo(CHART_REPO, chartname)
+        chart = ChartBuilder({'name': chartname, 'source': {'type': 'directory', 'location': chart_path}})
+        try:
+            result = ins.install_release(chart.get_helm_chart(),namespace,name=deployname,values=values)
+        except Exception,e:
+            result = e
+        return JsonResponse({'result': result})
+    if action == 'update':
+        chartname = request.POST.get('chartname', None)
+        deployname = request.POST.get('deployname', None)
+        values = request.POST.get('values', None)
+        chart_path = RepoUtils.from_repo(CHART_REPO, chartname)
+        chart = ChartBuilder({'name': chartname, 'source': {'type': 'directory', 'location': chart_path}})
+        try:
+            result = ins.update_release(chart.get_helm_chart(), deployname, values=values)
+        except Exception,e:
+            result = e
+        return JsonResponse({'result': result})
 
 
 

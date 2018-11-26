@@ -1,77 +1,184 @@
-<!DOCTYPE html>
-<html lang="cn">
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>{% block title %}运维平台{% endblock %} - 松鼠AI </title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-    <style>{% block style %}{% endblock %}</style>
-{#<script src="http://code.jquery.com/jquery.min.js"></script>#}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}运维平台{% endblock %} - 松鼠AI </title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            font-size:16px;
+            font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+            font-style: normal;
+            list-style: none;
+            text-decoration: none;
+        }
+        .left{float:left;}
+        .right{float:right}
+        .clearfix:after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+        .base-container {
+            width: 100vw;
+            height: 100vh;
+            min-width: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .base-header{
+            height: 50px;
+            background:#42aedf;
+            display: flex;
+            justify-content: space-between;
+        }
+        .base-header>.base-left,.base-header>.base-right{
+            display: flex;
+            align-items: center;
+        }
+        .base-header>.base-left>img{
+            width: 130px;
+            margin-right: 40px;
+        }
+        .base-header>.base-left>a{
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            color:#fff;
+            cursor: pointer;
+        }
+        .base-header>.base-right{
+            margin-right: 40px;}
+        .base-header>.base-right>div{
+            color:#fff;
+            margin-left:15px;
+            cursor: pointer;
+            position: relative;
+        }
+        .header-setting{
+            display: none;
+            position: absolute;
+            top:50px;
+            left:-150px;
+            width: 170px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 2px 2px 5px #999;
+            border: 1px solid #ccc;
+        }
+        .header-setting>li{
+            color:#000;
+            height: 35px;
+            line-height: 35px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .base-menu{
+            position: absolute;
+            left:0;
+            top:50px;
+            bottom: 0;
+            width: 170px;
+            background:#eee;
+        }
+        .base-menu li{
+            width: 100%;
+            padding:10px 0px;
+            overflow-x: hidden;
+            color:#000;
+            cursor: pointer;
+            text-align: center;
+            font-size:18px;
+        }
+        .base-menu li:hover{
+            background:red;
+        }
+        .base-content{
+            position: absolute;
+            top:50px;
+            left:170px;
+            right: 0;
+            bottom: 0;
+            overflow-y:auto;
+        }
+        .header-setting.visible{
+            display: none;
+        }
+        {% block style %}
+
+        {% endblock %}
+    </style>
     <script src="/static/jquery-1.8.3/jquery.min.js"></script>
 
 
 	<!-- Le styles -->
 	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-
-
 </head>
 <body>
-	<div class="navbar navbar-inverse">
-		<div class="navbar-inner" >
-			<div class="container" >
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="#">主页</a>
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li><a class="brand" href="/dashboard">Dashboard</a></li>
-{#						<li><a class="brand" href="/assets">资产管理</a></li>#}
-{#						<li><a class="brand" href="/configure">配置管理</a></li>#}
-{#						<li><a class="brand" href="/publish">项目发布</a></li>#}
-                        <li><a class="brand" href="/k8shelm">容器发布</a></li>
-						<li><a class="brand" href="/audit">发布审计</a></li>
-					</ul>
+    <div class="base-container">
+        <div class="base-header">
+            <div class="base-left">
+                <img src="/static/img/logo1.png" alt="松鼠AI">
+                <a>主页</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/k8shelm">容器发布</a>
+                <a href="/audit">发布审计</a>
+            </div>
+            <div class="base-right">
+                <div>{{ request.user.username }}</div>
+                <div>
+{#                    <span class="setBtn">设置</span>#}
+{#                    <ul class="header-setting visible">#}
+{#                        <li><a href="/admin">admin</a></li>#}
+{#                        <li><a href="/changepwd/?next={{ request.path }}">修改密码</a></li>#}
+{#                        <li><a href="/api">RESTFulApi</a></li>#}
+{#                        <li><a href="/logout/">退出</a></li>#}
+{#                    </ul>#}
 					<ul class="nav navbar-nav pull-right">
-						<li><a href="#">{{ request.user.username }}</a></li>
+{#						<li><a href="#">{{ request.user.username }}</a></li>#}
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">设置<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/admin">admin</a></li>
 							<li><a href="/changepwd/?next={{ request.path }}">修改密码</a></li>
-                                                        <li><a href="/api">RESTFulApi</a></li>
+                            <li><a href="/api">RESTFulApi</a></li>
 							<li><a href="/logout/">退出</a></li>
 						</ul>
 					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
-{#	<div class="container" id='page-content'>#}
-    <div  id='page-content'>
-{% block page-content %}
+                </div>
+            </div>
+        </div>
+        <div class="base-menu">
+            <ul>
+                <li>设置</li>
+                <li>设置</li>
+            </ul>
+        </div>
+        <div class="base-content">
+            {% block page-content %}
 
 
+                您的页面内容
 
-您的页面内容
-
-
-
-{% endblock %}
-	</div> <!-- /container -->
-
-
-
-
-	<!-- Le javascript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-{#	<script src="http://code.jquery.com/jquery.min.js"></script>#}
-	<script src="/static/bootstrap/js/bootstrap.js"></script>
-
+            {% endblock %}
+        </div>
+    </div>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+{#<script src="/static/jquery-1.8.3/jquery.min.js"></script>#}
+{#<script>#}
+{#    $(document).ready(function(){#}
+{#        $(".setBtn").click(function(){#}
+{#            $('.base-right ul').toggleClass('visible')#}
+{#        });#}
+{#        $('.header-setting li').click= function(){#}
+{#            $('.base-right ul').toggleClass('visible')#}
+{#        }#}
+{#    });#}
+{#</script>#}
 </body>
 </html>

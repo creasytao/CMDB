@@ -5004,3 +5004,1280 @@ Traceback (most recent call last):
   File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/template/base.py", line 695, in args_check
     (name, alen - dlen, plen))
 TemplateSyntaxError: chinese_date_format requires 2 arguments, 1 provided
+2018-11-22 19:41:56,965 [Thread-11:123145414258688] [django.request:170] [base:get_response] [WARNING]- Not Found: /helmk8s
+2018-11-22 19:42:00,389 [Thread-12:123145414258688] [django.request:170] [base:get_response] [WARNING]- Not Found: /helmk8s/
+2018-11-23 10:52:26,137 [Thread-56:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2018-11-23 10:52:33,224 [Thread-58:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2018-11-23 10:52:35,567 [Thread-60:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /getaction/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.getaction didn't return an HttpResponse object. It returned None instead.
+2018-11-23 10:53:18,110 [Thread-62:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 340, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 335, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, OS Error)>
+2018-11-23 10:53:19,769 [Thread-64:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 340, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 335, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, OS Error)>
+2018-11-23 10:57:43,999 [Thread-82:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542941863
+      nanos: 881303921
+    }
+    Description: "Rollback to 2"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 8
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 10:57:54,454 [Thread-84:123145414258688] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542941874
+      nanos: 336945419
+    }
+    Description: "Rollback to 3"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 9
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 11:08:25,219 [Thread-3:123145423269888] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542942505
+      nanos: 123743883
+    }
+    Description: "Rollback to 2"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 10
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 11:44:39,483 [Thread-5:123145467670528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542944679
+      nanos: 416286002
+    }
+    Description: "Rollback to 3"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 11
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 11:55:06,677 [Thread-13:123145467670528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542945306
+      nanos: 516497237
+    }
+    Description: "Rollback to 10"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 1) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 12
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 12:33:23,932 [Thread-16:123145472950272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 340, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 335, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.INTERNAL, GOAWAY received)>
+2018-11-23 13:09:45,273 [Thread-22:123145472950272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 340, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 335, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.INTERNAL, GOAWAY received)>
+2018-11-23 13:18:39,441 [Thread-31:123145472950272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542950319
+      nanos: 363141606
+    }
+    Description: "Rollback to 11"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 13
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 13:18:49,736 [Thread-33:123145472950272] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 357, in helm_list
+    return JsonResponse({'result': rollback_result})
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/http/response.py", line 535, in __init__
+    data = json.dumps(data, cls=encoder)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/serializers/json.py", line 112, in default
+    return super(DjangoJSONEncoder, self).default(o)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: release {
+  name: "general-rules"
+  info {
+    status {
+      code: DEPLOYED
+    }
+    first_deployed {
+      seconds: 1528252342
+      nanos: 491845113
+    }
+    last_deployed {
+      seconds: 1542950329
+      nanos: 666971592
+    }
+    Description: "Rollback to 3"
+  }
+  chart {
+    metadata {
+      name: "general-rules"
+      version: "0.1.0"
+      description: "A Helm chart for Kubernetes"
+      apiVersion: "v1"
+      appVersion: "1.0"
+    }
+    templates {
+      name: "templates/_helpers.tpl"
+      data: "{{/* vim: set filetype=mustache: */}}\n{{/*\nExpand the name of the chart.\n*/}}\n{{- define \"general-rules.name\" -}}\n{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n\n{{/*\nCreate a default fully qualified app name.\nWe truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).\nIf release name contains chart name it will be used as a full name.\n*/}}\n{{- define \"general-rules.fullname\" -}}\n{{- if .Values.fullnameOverride -}}\n{{- .Values.fullnameOverride | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- $name := default .Chart.Name .Values.nameOverride -}}\n{{- if contains $name .Release.Name -}}\n{{- .Release.Name | trunc 63 | trimSuffix \"-\" -}}\n{{- else -}}\n{{- printf \"%s-%s\" .Release.Name $name | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n{{- end -}}\n{{- end -}}\n\n{{/*\nCreate chart name and version as used by the chart label.\n*/}}\n{{- define \"general-rules.chart\" -}}\n{{- printf \"%s-%s\" .Chart.Name .Chart.Version | replace \"+\" \"_\" | trunc 63 | trimSuffix \"-\" -}}\n{{- end -}}\n"
+    }
+    templates {
+      name: "templates/configmap.yaml"
+      data: "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: {{ .Chart.Name }}-{{ .Chart.Version }}\n    heritage: {{ .Release.Service }}\n    prometheus: {{ .Values.prometheusLabelValue | default .Release.Name | quote }}\n    release: {{ .Release.Name }}\n    role: alert-rules\n    {{- if .Values.additionalRulesConfigMapLabels }}\n{{ toYaml .Values.additionalRulesConfigMapLabels | indent 4 }}\n    {{- end }}\n  name: {{ template \"general-rules.fullname\" . }}\ndata:\n{{- if .Values.prometheusRules }}\n{{- $root := . }}\n{{- range $key, $val := .Values.prometheusRules }}\n  {{ $key }}: |-\n{{ tpl $val $root | indent 4}}\n{{- end }}\n{{ else }}\n  general.rules: |-\n    {{- include \"general.rules.yaml.tpl\" . | indent 4}}\n{{ end }}\n"
+    }
+    templates {
+      name: "templates/general.rules.yaml"
+      data: "{{ define \"general.rules.yaml.tpl\" }}\ngroups:\n- name: general.rules\n  rules:\n  - alert: TargetDown\n    expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $value }}`}}% of {{`{{ $labels.job }}`}} targets are down.\'\n      summary: Targets are down\n  - alert: DeadMansSwitch\n    expr: vector(1)\n    labels:\n      severity: none\n    annotations:\n      description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n        pipeline is functional.\n      summary: Alerting DeadMansSwitch\n  - record: fd_utilization\n    expr: process_open_fds / process_max_fds\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n    for: 10m\n    labels:\n      severity: warning\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next 4 hours\'\n      summary: file descriptors soon exhausted\n  - alert: FdExhaustionClose\n    expr: predict_linear(fd_utilization[10m], 3600) > 1\n    for: 10m\n    labels:\n      severity: critical\n    annotations:\n      description: \'{{`{{ $labels.job }}`}}: {{`{{ $labels.namespace }}`}}/{{`{{ $labels.pod }}`}} instance\n        will exhaust in file/socket descriptors within the next hour\'\n      summary: file descriptors soon exhausted\n{{ end }}\n"
+    }
+    values {
+      raw: "# Default values for general-rules.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\n\nprometheusLabelValue: \'prometheus\'\nadditionalRulesConfigMapLabels: {}\n#prometheusRules: {}\n"
+    }
+    files {
+      type_url: ".helmignore"
+      value: "# Patterns to ignore when building packages.\n# This supports shell glob matching, relative path matching, and\n# negation (prefixed with !). Only one pattern per line.\n.DS_Store\n# Common VCS dirs\n.git/\n.gitignore\n.bzr/\n.bzrignore\n.hg/\n.hgignore\n.svn/\n# Common backup files\n*.swp\n*.bak\n*.tmp\n*~\n# Various IDEs\n.project\n.idea/\n*.tmproj\n"
+    }
+  }
+  config {
+    raw: "{}\n"
+  }
+  manifest: "\n---\n# Source: general-rules/templates/configmap.yaml\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    app: \"general-rules\"\n    chart: general-rules-0.1.0\n    heritage: Tiller\n    prometheus: \"prometheus\"\n    release: general-rules\n    role: alert-rules\n  name: general-rules\ndata:\n  general.rules: |-    \n    groups:\n    - name: general.rules\n      rules:\n      - alert: TargetDown\n        expr: 100 * (count(up == 0) BY (job) / count(up) BY (job)) > 10\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $value }}% of {{ $labels.job }} targets are down.\'\n          summary: Targets are down\n      - alert: DeadMansSwitch\n        expr: vector(1)\n        labels:\n          severity: none\n        annotations:\n          description: This is a DeadMansSwitch meant to ensure that the entire Alerting\n            pipeline is functional.\n          summary: Alerting DeadMansSwitch\n      - record: fd_utilization\n        expr: process_open_fds / process_max_fds\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[1h], 3600 * 4) > 1\n        for: 10m\n        labels:\n          severity: warning\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next 4 hours\'\n          summary: file descriptors soon exhausted\n      - alert: FdExhaustionClose\n        expr: predict_linear(fd_utilization[10m], 3600) > 1\n        for: 10m\n        labels:\n          severity: critical\n        annotations:\n          description: \'{{ $labels.job }}: {{ $labels.namespace }}/{{ $labels.pod }} instance\n            will exhaust in file/socket descriptors within the next hour\'\n          summary: file descriptors soon exhausted"
+  version: 14
+  namespace: "monitoring"
+}
+ is not JSON serializable
+2018-11-23 13:31:23,585 [Thread-38:123145477693440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 75, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/mywrapper.py", line 57, in _login
+    return func(request, *args, **kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 340, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 324, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.INTERNAL, GOAWAY received)>
+2018-11-23 13:40:44,159 [Thread-52:123145477693440] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2018-11-23 14:45:31,964 [Thread-2:123145348902912] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:47:49,490 [Thread-2:123145515147264] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:48:00,409 [Thread-3:123145520427008] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:48:33,580 [Thread-2:123145480683520] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:49:02,365 [Thread-2:123145352290304] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:49:47,649 [Thread-2:123145331515392] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:52:48,436 [Thread-3:123145316859904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:53:47,752 [Thread-2:123145452388352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:54:03,772 [Thread-2:123145521045504] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:54:32,790 [Thread-2:123145446756352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:56:04,224 [Thread-2:123145392025600] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 14:56:42,736 [Thread-2:123145501360128] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:19:56,832 [Thread-2:123145558351872] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:21:26,082 [Thread-2:123145388888064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:22:39,905 [Thread-2:123145346473984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:24:10,119 [Thread-2:123145400356864] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:25:38,670 [Thread-2:123145340153856] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:26:17,380 [Thread-2:123145342783488] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 15:53:57,511 [Thread-2:123145471676416] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo()
+TypeError: from_repo() takes at least 2 arguments (0 given)
+2018-11-23 15:54:10,300 [Thread-2:123145312436224] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo()
+TypeError: from_repo() takes at least 2 arguments (0 given)
+2018-11-23 16:08:38,381 [Thread-2:123145474744320] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 113, in from_repo
+    index = RepoUtils.repo_index(repo_url)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 94, in repo_index
+    index = requests.get(index_url, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 616, in send
+    adapter = self.get_adapter(url=request.url)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 707, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+InvalidSchema: No connection adapters were found for ''http://10.40.40.129:8080/'/index.yaml'
+2018-11-23 16:09:17,186 [Thread-2:123145395769344] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 113, in from_repo
+    index = RepoUtils.repo_index(repo_url)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 94, in repo_index
+    index = requests.get(index_url, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 616, in send
+    adapter = self.get_adapter(url=request.url)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 707, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+InvalidSchema: No connection adapters were found for ''http://10.40.40.129:8080'/index.yaml'
+2018-11-23 16:09:25,366 [Thread-3:123145401585664] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 113, in from_repo
+    index = RepoUtils.repo_index(repo_url)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 94, in repo_index
+    index = requests.get(index_url, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 616, in send
+    adapter = self.get_adapter(url=request.url)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 707, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+InvalidSchema: No connection adapters were found for ''http://10.40.40.129:8080'/index.yaml'
+2018-11-23 16:09:47,451 [Thread-2:123145347018752] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 113, in from_repo
+    index = RepoUtils.repo_index(repo_url)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 94, in repo_index
+    index = requests.get(index_url, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 616, in send
+    adapter = self.get_adapter(url=request.url)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 707, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+InvalidSchema: No connection adapters were found for '"http://10.40.40.129:8080"/index.yaml'
+2018-11-23 16:10:03,498 [Thread-2:123145535254528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 125, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:13:27,045 [Thread-3:123145541070848] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 125, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:14:00,832 [Thread-2:123145479503872] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:14:17,795 [Thread-2:123145364377600] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:14:34,025 [Thread-2:123145457893376] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:15:04,237 [Thread-2:123145567035392] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:16:18,313 [Thread-2:123145500672000] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 129, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:17:31,634 [Thread-2:123145426247680] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 130, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:18:15,289 [Thread-2:123145405124608] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:19:00,228 [Thread-2:123145540440064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:19:54,588 [Thread-2:123145534210048] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:20:03,419 [Thread-3:123145540026368] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:20:48,484 [Thread-2:123145420283904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:21:27,909 [Thread-2:123145500774400] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 128, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:23:30,403 [Thread-2:123145329598464] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 127, in from_repo
+    req = requests.get(url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 383, in prepare_url
+    raise MissingSchema(error)
+MissingSchema: Invalid URL 'charts/jenkins-0.14.3.tgz': No schema supplied. Perhaps you meant http://charts/jenkins-0.14.3.tgz?
+2018-11-23 16:32:42,531 [Thread-5:123145350455296] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(repo_url + url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 377, in prepare_url
+    raise InvalidURL(*e.args)
+InvalidURL: Failed to parse: 10.40.40.129:8080charts
+2018-11-23 16:33:02,414 [Thread-2:123145516646400] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(repo_url + url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 377, in prepare_url
+    raise InvalidURL(*e.args)
+InvalidURL: Failed to parse: 10.40.40.129:8080charts
+2018-11-23 16:33:14,709 [Thread-3:123145522462720] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(repo_url + url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 377, in prepare_url
+    raise InvalidURL(*e.args)
+InvalidURL: Failed to parse: 10.40.40.129:8080charts
+2018-11-23 16:33:20,175 [Thread-4:123145522462720] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 314, in helm_list
+    chart_path = RepoUtils.from_repo(CHART_REPO,'jenkins')
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/repo.py", line 126, in from_repo
+    req = requests.get(repo_url + url, stream=True, timeout=timeout)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 498, in request
+    prep = self.prepare_request(req)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/sessions.py", line 441, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 309, in prepare
+    self.prepare_url(url, params)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/requests/models.py", line 377, in prepare_url
+    raise InvalidURL(*e.args)
+InvalidURL: Failed to parse: 10.40.40.129:8080charts
+2018-11-23 17:11:27,236 [Thread-61:123145429676032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 346, in helm_list
+    list = ins.list_releases()
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 158, in list_releases
+    for y in release_list:
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 344, in next
+    return self._next()
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 335, in _next
+    raise self
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.INTERNAL, GOAWAY received)>
+2018-11-23 19:37:49,469 [Thread-18:123145522642944] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 321, in helm_list
+    release_status = ins.get_release_status(name)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 138, in get_release_status
+    metadata=self.metadata)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 500, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 434, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, OS Error)>
+2018-11-23 19:37:50,781 [Thread-19:123145522642944] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/views.py", line 321, in helm_list
+    release_status = ins.get_release_status(name)
+  File "/Users/meilin/PycharmProjects/CMDB/djangoproject/views/pyhelm/tiller.py", line 138, in get_release_status
+    metadata=self.metadata)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 500, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/grpc/_channel.py", line 434, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+_Rendezvous: <_Rendezvous of RPC that terminated with (StatusCode.UNAVAILABLE, OS Error)>
+2018-11-23 19:53:21,351 [Thread-2:123145566019584] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 19:53:34,703 [Thread-2:123145533902848] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 19:53:47,051 [Thread-3:123145539182592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 19:54:30,912 [Thread-6:123145539182592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 19:54:55,374 [Thread-9:123145539182592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.
+2018-11-23 19:55:18,488 [Thread-10:123145539182592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /k8shelm/
+Traceback (most recent call last):
+  File "/Users/meilin/.pyenv/versions/2.7.15/lib/python2.7/site-packages/django/core/handlers/base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view djangoproject.views.views.helm_list didn't return an HttpResponse object. It returned None instead.

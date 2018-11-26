@@ -114,7 +114,7 @@ class RepoUtils(object):
 
         if chart not in index['entries']:
             raise CustomError('Chart not found in repo')
-
+        print index
         versions = index['entries'][chart]
 
         if version is not None:
@@ -122,7 +122,7 @@ class RepoUtils(object):
 
         metadata = sorted(versions, key=lambda x: x['version'])[0]
         for url in metadata['urls']:
-            req = requests.get(url, stream=True, timeout=timeout)
+            req = requests.get(repo_url + url, stream=True, timeout=timeout)
             fobj = StringIO(req.content)
             tar = tarfile.open(mode="r:*", fileobj=fobj)
             tar.extractall(_tmp_dir)

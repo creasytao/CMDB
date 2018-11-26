@@ -18,10 +18,77 @@
     padding: 4px;
     margin: 5px;
     }
+*{
+    padding:0;
+    margin:0;
+    font-size:16px;
+    font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+    font-style: normal;
+    list-style: none;
+    text-decoration: none;
+}
+.clearfix:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.left{float:left;}
+.right{float:right;}
+.editionList{
+    overflow:hidden;
+    padding:20px;
+    background: #fff;
+}
+.edition-row{
+    margin:25px 0;
+    border:1px solid #E4E8EC;
+    height: 35px;
+    line-height: 35px;
+}
+.edition-row .col{
+    border-right:1px solid #E4E8EC;
+}
+.edition-detail,.edition-transition{
+    margin:20px 0;
+    max-height: 0;
+    overflow: hidden;
+}
+.edition-detail.visible,.edition-transition.visible{
+    max-height: 99999px;
+    transition: all 2s ease-in;
+}
+.edition-header{
+    height: 40px;
+    line-height: 40px;
+    padding-left:20px;
+    border:1px solid #E4E8EC;
+    background:#F5F6FA;
+    border-left:3px solid #6F7780;
+}
+.panel-body-nav div{
+    position: relative;
+    cursor: pointer;
+}
+.panel-body-nav div.active:after{
+    content:"";
+    display:inline-block;
+    border-top: 2px solid #49A1C7;
+    position: absolute;
+    top: -1px;
+    left:0;
+    width: 100%;
+}
+.currentEdition{
+    margin-bottom: 20px;
+}
+.historyEdition{
+
+}
 
 {% endblock %}
 
 {% block page-content %}
+
 
     <div  class="ng-scope" style="margin : 0.50in;">
         <table class="table-default-viewer" cellpadding="10px" cellspacing="10px">
@@ -131,6 +198,7 @@
                             <a class="margin-left rollback" >回滚到该版本</a>
                         </div>
                         <div class="col-sm-8" style="text-align: right">
+                            <span style='margin:15px;' >{{ his.info.Description }}</span>
                             <span >更新时间</span>
                             <span>:</span>
                             <span class="margin-left ng-binding">{{ his.info.last_deployed.seconds|chinese_date_format:"%Y-%m-%d %H:%M:%S" }}</span>
